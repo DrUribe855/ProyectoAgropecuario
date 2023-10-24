@@ -1,7 +1,6 @@
 
 package proyecto.agropecuario;
 
-
 public class ProyectoAgropecuario {
 
     /**
