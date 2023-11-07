@@ -2,14 +2,20 @@
 
 
 package Login;
+ 
+import Clases.Conexion;
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import java.util.HashMap;
+import java.util.Map;
 
-/**
- *
- * @author USUARIO
- */
 public class Login extends javax.swing.JFrame {
     
+    Conexion conexion;
+    Gson gson = new Gson();
+    
     public Login() {
+        this.conexion = new Conexion();
         initComponents();
         this.initAlternComponents();
     }
@@ -21,9 +27,23 @@ public class Login extends javax.swing.JFrame {
     public void validateUser(){
         String document = this.inputCedula.getText();
         char[] password = this.inputPassword.getPassword();
+        
         if(!document.equals("") && !password.equals("")){
             
+            Map<String, String> getData = new HashMap<>();
+            getData.put("documento", document);
+            
+            String textoJson = this.conexion.consumoGET("http://localhost/APIenPHP/getPersona.php", getData);
+            
+            if(!textoJson.equals("[]")){
+                JsonObject usuario = gson.fromJson(textoJson, JsonObject.class);
+                
+            }
+      
+            
         }
+            
+            
     }
 
     @SuppressWarnings("unchecked")
@@ -37,7 +57,7 @@ public class Login extends javax.swing.JFrame {
         inputPassword = new LIB.FSPasswordFieldMD();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btnIngresar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -78,13 +98,13 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setBackground(new java.awt.Color(51, 153, 0));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("INGRESAR");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnIngresar.setBackground(new java.awt.Color(51, 153, 0));
+        btnIngresar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnIngresar.setForeground(new java.awt.Color(255, 255, 255));
+        btnIngresar.setText("INGRESAR");
+        btnIngresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnIngresarActionPerformed(evt);
             }
         });
 
@@ -95,7 +115,7 @@ public class Login extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(83, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(inputPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(inputCedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(77, 77, 77))
@@ -120,7 +140,7 @@ public class Login extends javax.swing.JFrame {
                 .addGap(67, 67, 67)
                 .addComponent(inputPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(64, 64, 64)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(98, Short.MAX_VALUE))
         );
 
@@ -161,9 +181,15 @@ public class Login extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_jLabel4MouseClicked
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
+        this.validateUser(); 
+        //System.out.println(conexion.consumoGET("http://localhost/APIenPHP/Obtener.php"));
+        
+        
+        
+        
+        
+    }//GEN-LAST:event_btnIngresarActionPerformed
 
 
     public static void main(String args[]) {
@@ -199,9 +225,9 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnIngresar;
     private LIB.FSTexFieldMD inputCedula;
     private LIB.FSPasswordFieldMD inputPassword;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
