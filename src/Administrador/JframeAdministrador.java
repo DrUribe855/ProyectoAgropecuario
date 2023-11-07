@@ -55,7 +55,6 @@ public class JframeAdministrador extends javax.swing.JFrame {
         setResizable(false);
 
         PanelAbsolute.setBackground(new java.awt.Color(255, 255, 255));
-        PanelAbsolute.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         PanelLateral.setBackground(new java.awt.Color(0, 153, 51));
         PanelLateral.setAlignmentX(3.0F);
@@ -151,8 +150,6 @@ public class JframeAdministrador extends javax.swing.JFrame {
                 .addComponent(buttonnCerrarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        PanelAbsolute.add(PanelLateral, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 690));
-
         PanelSuperior.setBackground(new java.awt.Color(0, 153, 51));
         PanelSuperior.setPreferredSize(new java.awt.Dimension(770, 120));
 
@@ -172,7 +169,20 @@ public class JframeAdministrador extends javax.swing.JFrame {
             .addComponent(TituloPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
         );
 
-        PanelAbsolute.add(PanelSuperior, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 0, 770, -1));
+        javax.swing.GroupLayout PanelAbsoluteLayout = new javax.swing.GroupLayout(PanelAbsolute);
+        PanelAbsolute.setLayout(PanelAbsoluteLayout);
+        PanelAbsoluteLayout.setHorizontalGroup(
+            PanelAbsoluteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(PanelLateral, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(PanelAbsoluteLayout.createSequentialGroup()
+                .addGap(270, 270, 270)
+                .addComponent(PanelSuperior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        PanelAbsoluteLayout.setVerticalGroup(
+            PanelAbsoluteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(PanelLateral, javax.swing.GroupLayout.PREFERRED_SIZE, 690, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(PanelSuperior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
