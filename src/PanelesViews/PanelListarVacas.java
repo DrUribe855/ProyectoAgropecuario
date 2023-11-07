@@ -32,6 +32,8 @@ public class PanelListarVacas extends javax.swing.JPanel {
         PanelTable = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         TableVacas = new javax.swing.JTable();
+        buttonRegistrarVacas = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         PanelTable.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -65,15 +67,38 @@ public class PanelListarVacas extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(TableVacas);
 
+        buttonRegistrarVacas.setBackground(new java.awt.Color(0, 153, 0));
+        buttonRegistrarVacas.setFont(new java.awt.Font("HP Simplified Hans", 1, 18)); // NOI18N
+        buttonRegistrarVacas.setText("Registrar Vacas");
+
+        jButton1.setBackground(new java.awt.Color(204, 0, 0));
+        jButton1.setFont(new java.awt.Font("HP Simplified Hans", 1, 18)); // NOI18N
+        jButton1.setText("Volver");
+
         javax.swing.GroupLayout PanelTableLayout = new javax.swing.GroupLayout(PanelTable);
         PanelTable.setLayout(PanelTableLayout);
         PanelTableLayout.setHorizontalGroup(
             PanelTableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 706, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelTableLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(buttonRegistrarVacas)
+                .addContainerGap())
+            .addGroup(PanelTableLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jButton1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         PanelTableLayout.setVerticalGroup(
             PanelTableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 473, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelTableLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(buttonRegistrarVacas)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 386, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton1)
+                .addGap(12, 12, 12))
         );
 
         javax.swing.GroupLayout PanelTableVacasLayout = new javax.swing.GroupLayout(PanelTableVacas);
@@ -100,7 +125,7 @@ public class PanelListarVacas extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 473, Short.MAX_VALUE)
+            .addGap(0, 482, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -114,6 +139,8 @@ public class PanelListarVacas extends javax.swing.JPanel {
     private javax.swing.JPanel PanelTable;
     private javax.swing.JPanel PanelTableVacas;
     private javax.swing.JTable TableVacas;
+    private javax.swing.JButton buttonRegistrarVacas;
+    private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }
