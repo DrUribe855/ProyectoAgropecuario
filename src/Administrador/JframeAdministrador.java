@@ -15,10 +15,6 @@ public class JframeAdministrador extends javax.swing.JFrame {
      */
     public JframeAdministrador() {
         initComponents();
-        InitStyles();
-    }
-    private void InitStyles(){
-        TituloPrincipal.putClientProperty( "FlatLaf.style", "font: 20 $light.font" );
     }
 
     /**
@@ -30,6 +26,7 @@ public class JframeAdministrador extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
         PanelAbsolute = new javax.swing.JPanel();
         PanelLateral = new javax.swing.JPanel();
         Bienvenido = new javax.swing.JLabel();
@@ -40,9 +37,22 @@ public class JframeAdministrador extends javax.swing.JFrame {
         buttonnCerrarSesion = new javax.swing.JButton();
         PanelSuperior = new javax.swing.JPanel();
         TituloPrincipal = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
+
+        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 770, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 570, Short.MAX_VALUE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         PanelAbsolute.setBackground(new java.awt.Color(255, 255, 255));
         PanelAbsolute.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -74,6 +84,11 @@ public class JframeAdministrador extends javax.swing.JFrame {
         buttonAdmin.setFocusable(false);
         buttonAdmin.setOpaque(true);
         buttonAdmin.setRolloverEnabled(false);
+        buttonAdmin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonAdminActionPerformed(evt);
+            }
+        });
 
         buttonFincas.setBackground(new java.awt.Color(0, 102, 0));
         buttonFincas.setFont(new java.awt.Font("HP Simplified Hans", 1, 18)); // NOI18N
@@ -128,13 +143,12 @@ public class JframeAdministrador extends javax.swing.JFrame {
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
                 .addComponent(nombreSuperAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39)
+                .addGap(42, 42, 42)
                 .addComponent(buttonFincas, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(buttonAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 294, Short.MAX_VALUE)
-                .addComponent(buttonnCerrarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 309, Short.MAX_VALUE)
+                .addComponent(buttonnCerrarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         PanelAbsolute.add(PanelLateral, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 690));
@@ -160,21 +174,6 @@ public class JframeAdministrador extends javax.swing.JFrame {
 
         PanelAbsolute.add(PanelSuperior, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 0, 770, -1));
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 770, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 570, Short.MAX_VALUE)
-        );
-
-        PanelAbsolute.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 120, 770, 570));
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -188,6 +187,10 @@ public class JframeAdministrador extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void buttonAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAdminActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buttonAdminActionPerformed
 
     /**
      * @param args the command line arguments
