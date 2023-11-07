@@ -32,6 +32,8 @@ public class PanelListarFincas extends javax.swing.JPanel {
         PanelTable = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         TableFincas = new javax.swing.JTable();
+        buttonRegisrarFinca = new javax.swing.JButton();
+        buttonVolver = new javax.swing.JButton();
 
         PanelTable.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -65,15 +67,43 @@ public class PanelListarFincas extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(TableFincas);
 
+        buttonRegisrarFinca.setBackground(new java.awt.Color(0, 153, 0));
+        buttonRegisrarFinca.setFont(new java.awt.Font("HP Simplified Hans", 1, 18)); // NOI18N
+        buttonRegisrarFinca.setText("Registrar Finca");
+
+        buttonVolver.setBackground(new java.awt.Color(204, 0, 0));
+        buttonVolver.setFont(new java.awt.Font("HP Simplified Hans", 1, 18)); // NOI18N
+        buttonVolver.setText("Volver");
+
         javax.swing.GroupLayout PanelTableLayout = new javax.swing.GroupLayout(PanelTable);
         PanelTable.setLayout(PanelTableLayout);
         PanelTableLayout.setHorizontalGroup(
             PanelTableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 706, Short.MAX_VALUE)
+            .addGroup(PanelTableLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(PanelTableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelTableLayout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(buttonVolver)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(PanelTableLayout.createSequentialGroup()
+                        .addGroup(PanelTableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 706, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelTableLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(buttonRegisrarFinca)))
+                        .addContainerGap())))
         );
         PanelTableLayout.setVerticalGroup(
             PanelTableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 473, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelTableLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(buttonRegisrarFinca)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 386, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(buttonVolver)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout PanelTableFincasLayout = new javax.swing.GroupLayout(PanelTableFincas);
@@ -91,7 +121,7 @@ public class PanelListarFincas extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 706, Short.MAX_VALUE)
+            .addGap(0, 718, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -100,7 +130,7 @@ public class PanelListarFincas extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 473, Short.MAX_VALUE)
+            .addGap(0, 482, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -114,6 +144,8 @@ public class PanelListarFincas extends javax.swing.JPanel {
     private javax.swing.JPanel PanelTable;
     private javax.swing.JPanel PanelTableFincas;
     private javax.swing.JTable TableFincas;
+    private javax.swing.JButton buttonRegisrarFinca;
+    private javax.swing.JButton buttonVolver;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }
