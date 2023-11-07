@@ -41,7 +41,6 @@ public class JframeOrdeniador extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         PanelAbsolute.setBackground(new java.awt.Color(255, 255, 255));
-        PanelAbsolute.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         PanelLateral.setBackground(new java.awt.Color(0, 153, 51));
         PanelLateral.setAlignmentX(3.0F);
@@ -118,8 +117,6 @@ public class JframeOrdeniador extends javax.swing.JFrame {
                 .addComponent(buttonnCerrarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        PanelAbsolute.add(PanelLateral, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 690));
-
         PanelSuperior.setBackground(new java.awt.Color(0, 153, 51));
         PanelSuperior.setPreferredSize(new java.awt.Dimension(770, 120));
 
@@ -141,7 +138,7 @@ public class JframeOrdeniador extends javax.swing.JFrame {
                 .addComponent(TituloPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 523, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(nombreFinca)
-                .addContainerGap(112, Short.MAX_VALUE))
+                .addContainerGap(103, Short.MAX_VALUE))
         );
         PanelSuperiorLayout.setVerticalGroup(
             PanelSuperiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -149,8 +146,6 @@ public class JframeOrdeniador extends javax.swing.JFrame {
                 .addComponent(TituloPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addComponent(nombreFinca, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
-
-        PanelAbsolute.add(PanelSuperior, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 0, 770, -1));
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -165,7 +160,25 @@ public class JframeOrdeniador extends javax.swing.JFrame {
             .addGap(0, 570, Short.MAX_VALUE)
         );
 
-        PanelAbsolute.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 120, 770, 570));
+        javax.swing.GroupLayout PanelAbsoluteLayout = new javax.swing.GroupLayout(PanelAbsolute);
+        PanelAbsolute.setLayout(PanelAbsoluteLayout);
+        PanelAbsoluteLayout.setHorizontalGroup(
+            PanelAbsoluteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(PanelLateral, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(PanelAbsoluteLayout.createSequentialGroup()
+                .addGap(270, 270, 270)
+                .addGroup(PanelAbsoluteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PanelSuperior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        );
+        PanelAbsoluteLayout.setVerticalGroup(
+            PanelAbsoluteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelAbsoluteLayout.createSequentialGroup()
+                .addGap(120, 120, 120)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(PanelLateral, javax.swing.GroupLayout.PREFERRED_SIZE, 690, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(PanelSuperior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

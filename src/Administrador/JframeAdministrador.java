@@ -45,7 +45,6 @@ public class JframeAdministrador extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         PanelAbsolute.setBackground(new java.awt.Color(255, 255, 255));
-        PanelAbsolute.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         PanelLateral.setBackground(new java.awt.Color(0, 153, 51));
         PanelLateral.setAlignmentX(3.0F);
@@ -137,8 +136,6 @@ public class JframeAdministrador extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        PanelAbsolute.add(PanelLateral, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 690));
-
         PanelSuperior.setBackground(new java.awt.Color(0, 153, 51));
         PanelSuperior.setPreferredSize(new java.awt.Dimension(770, 120));
 
@@ -158,8 +155,6 @@ public class JframeAdministrador extends javax.swing.JFrame {
             .addComponent(TituloPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
         );
 
-        PanelAbsolute.add(PanelSuperior, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 0, 770, -1));
-
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -173,7 +168,25 @@ public class JframeAdministrador extends javax.swing.JFrame {
             .addGap(0, 570, Short.MAX_VALUE)
         );
 
-        PanelAbsolute.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 120, 770, 570));
+        javax.swing.GroupLayout PanelAbsoluteLayout = new javax.swing.GroupLayout(PanelAbsolute);
+        PanelAbsolute.setLayout(PanelAbsoluteLayout);
+        PanelAbsoluteLayout.setHorizontalGroup(
+            PanelAbsoluteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(PanelLateral, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(PanelAbsoluteLayout.createSequentialGroup()
+                .addGap(270, 270, 270)
+                .addGroup(PanelAbsoluteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(PanelSuperior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        );
+        PanelAbsoluteLayout.setVerticalGroup(
+            PanelAbsoluteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelAbsoluteLayout.createSequentialGroup()
+                .addComponent(PanelSuperior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(PanelLateral, javax.swing.GroupLayout.PREFERRED_SIZE, 690, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
