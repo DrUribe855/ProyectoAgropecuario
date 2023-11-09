@@ -3,7 +3,7 @@
 $servidor = 'localhost';
 $usuario = 'root';
 $contrasena = '';
-$nombre_de_base = 'app_java';
+$nombre_de_base = 'agro_riqueza';
 
 try{
    $base_de_datos = new PDO("mysql:host=$servidor;dbname=$nombre_de_base", $usuario, $contrasena);
