@@ -106,7 +106,16 @@ public class PanelListarUsuarios extends javax.swing.JPanel {
     
     
     public void updateUser(Usuario usuario){
-        System.out.println("Nombre: "+usuario.getNombres());
+        
+        String documento = usuario.getDocumento();
+        String nombres = usuario.getNombres();
+        String apellidos = usuario.getApellidos();
+        String telefono = usuario.getTelefono();
+        String rol = usuario.getRol();
+        String email = usuario.getEmail();
+        
+        JframeModificarUsuario ventanaUpdate = new JframeModificarUsuario(documento, nombres, apellidos, telefono, rol, email);
+        ventanaUpdate.setVisible(true);
     }
     
     public void deleteUser(Usuario usuario){
