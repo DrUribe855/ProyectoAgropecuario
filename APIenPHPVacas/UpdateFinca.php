@@ -5,24 +5,18 @@ header("Access-Control-Allow-Headers: Content-Type");
 
 include 'Conexion.php';
 
-if (!empty($_POST['documento']) and !empty($_POST['nombres']) and !empty($_POST['apellidos'])) {
+if (!empty($_POST['nombre_finca'])) {
 
-    $documento = $_POST['documento'];
-    $nombres = $_POST['nombres'];
-    $apellidos = $_POST['apellidos'];
-    $telefono = $_POST['telefono'];
-    $rol = $_POST['rol'];
-    $email = $_POST['email'];
+    $id_finca = $_POST['id_finca'];
+    $nombre_finca = $_POST['nombre_finca'];
+    
 
     try {
-        $consulta = $base_de_datos->prepare("UPDATE usuarios SET nombres=:nom, apellidos=:ape, telefono=:tel, rol=:rol, email=:ema WHERE documento = :doc ");
+        $consulta = $base_de_datos->prepare("UPDATE fincas SET nombre_finca=:nomf WHERE id_finca = :id ");
 
-        $consulta->bindParam(':doc', $documento);
-        $consulta->bindParam(':nom', $nombres);
-        $consulta->bindParam(':ape', $apellidos);
-        $consulta->bindParam(':tel', $telefono);
-        $consulta->bindParam(':rol', $rol);
-        $consulta->bindParam(':ema', $email);
+        $consulta->bindParam(':id', $id_finca);
+        $consulta->bindParam(':nomf', $nombre_finca);
+        
 
         $proceso = $consulta->execute();
 
