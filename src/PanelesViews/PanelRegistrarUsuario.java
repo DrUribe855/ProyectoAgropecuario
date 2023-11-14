@@ -211,8 +211,7 @@ public class PanelRegistrarUsuario extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
-        
-   
+
         String documento = campoDocumento.getText();
         String nombres = campoNombres.getText();
         String apellidos = campoApellidos.getText();

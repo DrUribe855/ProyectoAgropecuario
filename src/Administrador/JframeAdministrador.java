@@ -1,20 +1,24 @@
 
 package Administrador;
 
+import PanelesViews.PanelListarFincas;
 import PanelesViews.PanelListarUsuarios;
 import PanelesViews.PanelRegistrarUsuario;
+import PanelesViews.PanelRegistrarFinca;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 
 public class JframeAdministrador extends javax.swing.JFrame {
 
     PanelRegistrarUsuario ventanaRegistroUsuario;
+    PanelRegistrarFinca ventanaRegistrarFincas;
     
     
     public JframeAdministrador() {
         initComponents();
         setLocationRelativeTo(null);
         this.ventanaRegistroUsuario = new PanelRegistrarUsuario();
+        this.ventanaRegistrarFincas = new PanelRegistrarFinca();
         
     }
     
@@ -29,6 +33,17 @@ public class JframeAdministrador extends javax.swing.JFrame {
         panelEstatico.revalidate();
         panelEstatico.repaint();
     }
+     public void showInsertFincas(){
+        this.panelEstatico.removeAll();
+        this.panelEstatico.repaint();
+        
+        PanelRegistrarFinca ventanaPanelRegistrarFincas = new PanelRegistrarFinca();
+        ventanaPanelRegistrarFincas.setSize(this.panelEstatico.getSize());
+        panelEstatico.add(ventanaPanelRegistrarFincas, BorderLayout.CENTER);
+        
+        panelEstatico.revalidate();
+        panelEstatico.repaint();
+    }
     
     private void showUsers(){
         this.panelEstatico.removeAll();
@@ -39,6 +54,18 @@ public class JframeAdministrador extends javax.swing.JFrame {
         ventanaPanelListarUsuarios.setLocation(0,0);
         
         panelEstatico.add(ventanaPanelListarUsuarios, BorderLayout.CENTER);
+        panelEstatico.revalidate();
+        panelEstatico.repaint();
+    }
+    private void showFincas(){
+        this.panelEstatico.removeAll();
+        this.panelEstatico.repaint();
+        
+        PanelListarFincas ventanaPanelListarFincas = new PanelListarFincas(this);
+        ventanaPanelListarFincas.setSize(this.panelEstatico.getSize());
+        ventanaPanelListarFincas.setLocation(0,0);
+        
+        panelEstatico.add(ventanaPanelListarFincas, BorderLayout.CENTER);
         panelEstatico.revalidate();
         panelEstatico.repaint();
     }
@@ -124,6 +151,11 @@ public class JframeAdministrador extends javax.swing.JFrame {
         buttonFincas.setFocusable(false);
         buttonFincas.setOpaque(true);
         buttonFincas.setRolloverEnabled(false);
+        buttonFincas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonFincasActionPerformed(evt);
+            }
+        });
 
         buttonnCerrarSesion.setBackground(new java.awt.Color(204, 0, 0));
         buttonnCerrarSesion.setFont(new java.awt.Font("HP Simplified Hans", 0, 18)); // NOI18N
@@ -250,6 +282,10 @@ public class JframeAdministrador extends javax.swing.JFrame {
         
     }//GEN-LAST:event_buttonAdminActionPerformed
 
+    private void buttonFincasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonFincasActionPerformed
+        showFincas();
+    }//GEN-LAST:event_buttonFincasActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -299,4 +335,6 @@ public class JframeAdministrador extends javax.swing.JFrame {
     private javax.swing.JLabel nombreSuperAdmin;
     private javax.swing.JPanel panelEstatico;
     // End of variables declaration//GEN-END:variables
+
+
 }

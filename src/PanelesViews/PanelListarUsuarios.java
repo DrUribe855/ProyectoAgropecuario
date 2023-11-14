@@ -49,6 +49,7 @@ public class PanelListarUsuarios extends javax.swing.JPanel {
     private void fillData(){
         
         String textoJson = conexion.consumoGET("http://localhost/APIenPHPVacas/ObtenerUsuarios.php");
+        System.out.print(textoJson);
         JsonObject jsonobject = JsonParser.parseString(textoJson).getAsJsonObject();
         JsonArray registros  = jsonobject.getAsJsonArray("registros");
         List<Usuario> usuarios = new ArrayList<>();
@@ -173,7 +174,7 @@ public class PanelListarUsuarios extends javax.swing.JPanel {
         PanelTableUsuariosLayout.setHorizontalGroup(
             PanelTableUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelTableUsuariosLayout.createSequentialGroup()
-                .addContainerGap(645, Short.MAX_VALUE)
+                .addContainerGap(646, Short.MAX_VALUE)
                 .addComponent(btnRegistrarUsuario)
                 .addGap(17, 17, 17))
             .addGroup(PanelTableUsuariosLayout.createSequentialGroup()
