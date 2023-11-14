@@ -8,6 +8,7 @@ import java.util.Map;
 public class JframeModificarUsuario extends javax.swing.JFrame {
     
     Conexion conexion;
+    PanelListarUsuarios ventana;
     String documento;
     String nombres;
     String apellidos;
@@ -15,7 +16,8 @@ public class JframeModificarUsuario extends javax.swing.JFrame {
     String rol;
     String email;
     
-    public JframeModificarUsuario(String documento, String nombres, String apellidos, String telefono, String rol, String email) {
+    public JframeModificarUsuario(PanelListarUsuarios ventana,String documento, String nombres, String apellidos, String telefono, String rol, String email) {
+        this.ventana = ventana;
         this.documento = documento;
         this.nombres = nombres;
         this.apellidos = apellidos;
@@ -62,7 +64,7 @@ public class JframeModificarUsuario extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         campoRol = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         panelPrincipal.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -248,6 +250,7 @@ public class JframeModificarUsuario extends javax.swing.JFrame {
             updateData.put("email", email);
             System.out.println("Consumo UPDATE: " + conexion.consumoPOST("http://localhost/APIenPHPVacas/UpdateUsuario.php", updateData));
             System.out.println("Usuario Modificado");
+            this.ventana.fillData();
             dispose();
             //Alerta alert = new Alerta("Persona Creada","La persona fue creada correctamente","success");
 

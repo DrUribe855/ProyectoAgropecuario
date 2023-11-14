@@ -46,7 +46,7 @@ public class PanelListarUsuarios extends javax.swing.JPanel {
     
     
 
-    private void fillData(){
+    public void fillData(){
         
         String textoJson = conexion.consumoGET("http://localhost/APIenPHPVacas/ObtenerUsuarios.php");
         System.out.print(textoJson);
@@ -69,6 +69,7 @@ public class PanelListarUsuarios extends javax.swing.JPanel {
             usuarios.add(usuario);
         } 
         
+        modelo.setRowCount(0);
         for (Usuario usuario : usuarios) {
             
             JButton btn_editar = new JButton("Modificar");
@@ -115,7 +116,7 @@ public class PanelListarUsuarios extends javax.swing.JPanel {
         String rol = usuario.getRol();
         String email = usuario.getEmail();
         
-        JframeModificarUsuario ventanaUpdate = new JframeModificarUsuario(documento, nombres, apellidos, telefono, rol, email);
+        JframeModificarUsuario ventanaUpdate = new JframeModificarUsuario(this, documento, nombres, apellidos, telefono, rol, email);
         ventanaUpdate.setVisible(true);
     }
     
@@ -131,7 +132,6 @@ public class PanelListarUsuarios extends javax.swing.JPanel {
         PanelTableUsuarios = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         TableUsuarios = new javax.swing.JTable();
-        btnVolver = new javax.swing.JButton();
         btnRegistrarUsuario = new javax.swing.JButton();
 
         PanelTableUsuarios.setBackground(new java.awt.Color(255, 255, 255));
@@ -156,10 +156,6 @@ public class PanelListarUsuarios extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(TableUsuarios);
 
-        btnVolver.setBackground(new java.awt.Color(204, 0, 0));
-        btnVolver.setFont(new java.awt.Font("HP Simplified Hans", 1, 18)); // NOI18N
-        btnVolver.setText("Volver");
-
         btnRegistrarUsuario.setBackground(new java.awt.Color(0, 153, 0));
         btnRegistrarUsuario.setFont(new java.awt.Font("HP Simplified Hans", 1, 18)); // NOI18N
         btnRegistrarUsuario.setText("Registrar Usuario");
@@ -179,11 +175,7 @@ public class PanelListarUsuarios extends javax.swing.JPanel {
                 .addGap(17, 17, 17))
             .addGroup(PanelTableUsuariosLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(PanelTableUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PanelTableUsuariosLayout.createSequentialGroup()
-                        .addComponent(btnVolver)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addComponent(jScrollPane1)
                 .addContainerGap())
         );
         PanelTableUsuariosLayout.setVerticalGroup(
@@ -192,10 +184,8 @@ public class PanelListarUsuarios extends javax.swing.JPanel {
                 .addContainerGap()
                 .addComponent(btnRegistrarUsuario)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 215, Short.MAX_VALUE)
-                .addComponent(btnVolver)
-                .addGap(9, 9, 9))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -219,7 +209,6 @@ public class PanelListarUsuarios extends javax.swing.JPanel {
     private javax.swing.JPanel PanelTableUsuarios;
     private javax.swing.JTable TableUsuarios;
     private javax.swing.JButton btnRegistrarUsuario;
-    private javax.swing.JButton btnVolver;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

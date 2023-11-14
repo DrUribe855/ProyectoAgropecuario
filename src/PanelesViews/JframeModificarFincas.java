@@ -8,11 +8,13 @@ import java.util.Map;
 
 public class JframeModificarFincas extends javax.swing.JFrame {
     Conexion conexion;
+    PanelListarFincas ventana;
     Integer id_finca;
     String nombre_finca;
     
-    public JframeModificarFincas(Integer id_finca, String nombre_finca) {
+    public JframeModificarFincas(PanelListarFincas ventana, Integer id_finca, String nombre_finca) {
         this.id_finca = id_finca;
+        this.ventana = ventana;
         this.nombre_finca = nombre_finca;
         this.conexion = new Conexion();
         initComponents();
@@ -24,8 +26,9 @@ public class JframeModificarFincas extends javax.swing.JFrame {
     }
     
     public void fillInputsUsers(){
-        //mpoIdFinca.setText(this.id_finca);
+        campoIdFinca.setText(this.id_finca.toString());
         campoNombreFinca.setText(this.nombre_finca);
+        
     }
 
     
@@ -90,7 +93,10 @@ public class JframeModificarFincas extends javax.swing.JFrame {
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Id Finca");
 
+        campoIdFinca.setEditable(false);
         campoIdFinca.setFont(new java.awt.Font("HP Simplified Hans", 0, 18)); // NOI18N
+        campoIdFinca.setEnabled(false);
+        campoIdFinca.setFocusable(false);
         campoIdFinca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 campoIdFincaActionPerformed(evt);
@@ -171,9 +177,11 @@ public class JframeModificarFincas extends javax.swing.JFrame {
            
             // POST con Datos
             Map<String, String> updateData = new HashMap<>();
+            updateData.put("id_finca", id_finca);
             updateData.put("nombre_finca", nombre_finca);
             System.out.println("Consumo UPDATE: " + conexion.consumoPOST("http://localhost/APIenPHPVacas/UpdateFinca.php", updateData));
-            System.out.println("Usuario Modificado");
+            System.out.println("Finca Modificada");
+            this.ventana.fillData();
             dispose();
             //Alerta alert = new Alerta("Persona Creada","La persona fue creada correctamente","success");
 

@@ -17,8 +17,8 @@ public class JframeAdministrador extends javax.swing.JFrame {
     public JframeAdministrador() {
         initComponents();
         setLocationRelativeTo(null);
-        this.ventanaRegistroUsuario = new PanelRegistrarUsuario();
-        this.ventanaRegistrarFincas = new PanelRegistrarFinca();
+        this.ventanaRegistroUsuario = new PanelRegistrarUsuario(this);
+        this.ventanaRegistrarFincas = new PanelRegistrarFinca(this);
         
     }
     
@@ -26,7 +26,7 @@ public class JframeAdministrador extends javax.swing.JFrame {
         this.panelEstatico.removeAll();
         this.panelEstatico.repaint();
         
-        PanelRegistrarUsuario ventanaPanelRegistrarUsuario = new PanelRegistrarUsuario();
+        PanelRegistrarUsuario ventanaPanelRegistrarUsuario = new PanelRegistrarUsuario(this);
         ventanaPanelRegistrarUsuario.setSize(this.panelEstatico.getSize());
         panelEstatico.add(ventanaPanelRegistrarUsuario, BorderLayout.CENTER);
         
@@ -37,7 +37,7 @@ public class JframeAdministrador extends javax.swing.JFrame {
         this.panelEstatico.removeAll();
         this.panelEstatico.repaint();
         
-        PanelRegistrarFinca ventanaPanelRegistrarFincas = new PanelRegistrarFinca();
+        PanelRegistrarFinca ventanaPanelRegistrarFincas = new PanelRegistrarFinca(this);
         ventanaPanelRegistrarFincas.setSize(this.panelEstatico.getSize());
         panelEstatico.add(ventanaPanelRegistrarFincas, BorderLayout.CENTER);
         
@@ -45,7 +45,7 @@ public class JframeAdministrador extends javax.swing.JFrame {
         panelEstatico.repaint();
     }
     
-    private void showUsers(){
+    public void showUsers(){
         this.panelEstatico.removeAll();
         this.panelEstatico.repaint();
         
@@ -57,14 +57,13 @@ public class JframeAdministrador extends javax.swing.JFrame {
         panelEstatico.revalidate();
         panelEstatico.repaint();
     }
-    private void showFincas(){
+    public void showFincas(){
         this.panelEstatico.removeAll();
         this.panelEstatico.repaint();
         
         PanelListarFincas ventanaPanelListarFincas = new PanelListarFincas(this);
         ventanaPanelListarFincas.setSize(this.panelEstatico.getSize());
         ventanaPanelListarFincas.setLocation(0,0);
-        
         panelEstatico.add(ventanaPanelListarFincas, BorderLayout.CENTER);
         panelEstatico.revalidate();
         panelEstatico.repaint();
@@ -230,7 +229,7 @@ public class JframeAdministrador extends javax.swing.JFrame {
         panelEstatico.setLayout(panelEstaticoLayout);
         panelEstaticoLayout.setHorizontalGroup(
             panelEstaticoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 763, Short.MAX_VALUE)
         );
         panelEstaticoLayout.setVerticalGroup(
             panelEstaticoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -242,13 +241,12 @@ public class JframeAdministrador extends javax.swing.JFrame {
         PanelAbsoluteLayout.setHorizontalGroup(
             PanelAbsoluteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelAbsoluteLayout.createSequentialGroup()
-                .addComponent(PanelLateral, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(panelEstatico, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(PanelAbsoluteLayout.createSequentialGroup()
-                .addGap(270, 270, 270)
-                .addComponent(PanelSuperior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(PanelAbsoluteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(PanelAbsoluteLayout.createSequentialGroup()
+                        .addComponent(PanelLateral, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(panelEstatico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(PanelSuperior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         PanelAbsoluteLayout.setVerticalGroup(

@@ -43,7 +43,7 @@ public class PanelListarFincas extends javax.swing.JPanel {
         this.TableFincas.getColumn("Eliminar").setCellEditor(new ButtonEditor(new JCheckBox()));
     }
     
-    private void fillData(){
+    public void fillData(){
         
         String textoJson = conexion.consumoGET("http://localhost/APIenPHPVacas/ObtenerFincas.php");
         System.out.println(textoJson);
@@ -59,7 +59,7 @@ public class PanelListarFincas extends javax.swing.JPanel {
             
             fincas.add(finca);
         } 
-        
+        modelo.setRowCount(0);
         for (Finca finca : fincas) {
             
             JButton btn_editar = new JButton("Modificar");
@@ -98,8 +98,9 @@ public class PanelListarFincas extends javax.swing.JPanel {
         Integer id_finca = finca.getId_finca();
         String nombre_finca = finca.getNombre_finca();
         
+        System.out.println(id_finca);
         
-        JframeModificarFincas ventanaUpdate = new JframeModificarFincas(id_finca, nombre_finca);
+        JframeModificarFincas ventanaUpdate = new JframeModificarFincas(this,id_finca, nombre_finca);
         ventanaUpdate.setVisible(true);
     }
     
@@ -116,7 +117,6 @@ public class PanelListarFincas extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         TableFincas = new javax.swing.JTable();
         buttonRegisrarFinca = new javax.swing.JButton();
-        buttonVolver = new javax.swing.JButton();
 
         PanelTable.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -125,10 +125,7 @@ public class PanelListarFincas extends javax.swing.JPanel {
         TableFincas.setForeground(new java.awt.Color(0, 0, 0));
         TableFincas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
                 "Identificador Finca", "Nombre Finca", "Modificar", "Eliminar"
@@ -138,7 +135,7 @@ public class PanelListarFincas extends javax.swing.JPanel {
                 java.lang.Integer.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, true, true
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -160,18 +157,10 @@ public class PanelListarFincas extends javax.swing.JPanel {
             }
         });
 
-        buttonVolver.setBackground(new java.awt.Color(204, 0, 0));
-        buttonVolver.setFont(new java.awt.Font("HP Simplified Hans", 1, 18)); // NOI18N
-        buttonVolver.setText("Volver");
-
         javax.swing.GroupLayout PanelTableLayout = new javax.swing.GroupLayout(PanelTable);
         PanelTable.setLayout(PanelTableLayout);
         PanelTableLayout.setHorizontalGroup(
             PanelTableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelTableLayout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addComponent(buttonVolver)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(PanelTableLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(buttonRegisrarFinca)
@@ -186,10 +175,8 @@ public class PanelListarFincas extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(buttonRegisrarFinca)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(206, 206, 206)
-                .addComponent(buttonVolver)
-                .addContainerGap())
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(8, 8, 8))
         );
 
         javax.swing.GroupLayout PanelTableFincasLayout = new javax.swing.GroupLayout(PanelTableFincas);
@@ -239,7 +226,6 @@ public class PanelListarFincas extends javax.swing.JPanel {
     private javax.swing.JPanel PanelTableFincas;
     private javax.swing.JTable TableFincas;
     private javax.swing.JButton buttonRegisrarFinca;
-    private javax.swing.JButton buttonVolver;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 

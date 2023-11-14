@@ -1,5 +1,6 @@
 package PanelesViews;
 
+import Administrador.JframeAdministrador;
 import Clases.Conexion;
 import java.util.HashMap;
 import java.util.Map;
@@ -7,8 +8,9 @@ import java.util.Map;
 
 public class PanelRegistrarUsuario extends javax.swing.JPanel {
     Conexion Conexion;
-    
-    public PanelRegistrarUsuario() {
+    JframeAdministrador ventana;
+    public PanelRegistrarUsuario(JframeAdministrador ventana) {
+        this.ventana = ventana;
         this.Conexion = new Conexion();
         initComponents();
     }
@@ -35,7 +37,7 @@ public class PanelRegistrarUsuario extends javax.swing.JPanel {
         campoPassword = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         campoRol = new javax.swing.JComboBox<>();
-        jButton1 = new javax.swing.JButton();
+        buttonVolverUser = new javax.swing.JButton();
         btnRegistrar = new javax.swing.JButton();
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -102,9 +104,14 @@ public class PanelRegistrarUsuario extends javax.swing.JPanel {
 
         campoRol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "....", "ORDENIADOR", "ADMIN", " " }));
 
-        jButton1.setBackground(new java.awt.Color(204, 0, 0));
-        jButton1.setFont(new java.awt.Font("HP Simplified Hans", 1, 18)); // NOI18N
-        jButton1.setText("Volver");
+        buttonVolverUser.setBackground(new java.awt.Color(204, 0, 0));
+        buttonVolverUser.setFont(new java.awt.Font("HP Simplified Hans", 1, 18)); // NOI18N
+        buttonVolverUser.setText("Volver");
+        buttonVolverUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonVolverUserActionPerformed(evt);
+            }
+        });
 
         btnRegistrar.setBackground(new java.awt.Color(0, 153, 0));
         btnRegistrar.setFont(new java.awt.Font("HP Simplified Hans", 1, 18)); // NOI18N
@@ -149,7 +156,7 @@ public class PanelRegistrarUsuario extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(88, 88, 88)
-                .addComponent(jButton1)
+                .addComponent(buttonVolverUser)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnRegistrar)
                 .addGap(87, 87, 87))
@@ -193,7 +200,7 @@ public class PanelRegistrarUsuario extends javax.swing.JPanel {
                 .addComponent(campoRol, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
+                    .addComponent(buttonVolverUser)
                     .addComponent(btnRegistrar))
                 .addContainerGap(29, Short.MAX_VALUE))
         );
@@ -233,6 +240,10 @@ public class PanelRegistrarUsuario extends javax.swing.JPanel {
             
             
             System.out.println("Usuario Insertado");
+            // hace que recargue el panel de listar 
+            JframeAdministrador ventana2 = new JframeAdministrador();
+            setVisible(false);
+            ventana.showUsers(); 
             //dispose();
             //menu.setVisible(true);
             //Alerta alert = new Alerta("Persona Creada","La persona fue creada correctamente","success");
@@ -243,9 +254,16 @@ public class PanelRegistrarUsuario extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
+    private void buttonVolverUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonVolverUserActionPerformed
+        JframeAdministrador ventana2 = new JframeAdministrador();
+        setVisible(false);
+        ventana.showUsers();
+    }//GEN-LAST:event_buttonVolverUserActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnRegistrar;
+    private javax.swing.JButton buttonVolverUser;
     private javax.swing.JTextField campoApellidos;
     private javax.swing.JTextField campoDocumento;
     private javax.swing.JTextField campoEmail;
@@ -253,7 +271,6 @@ public class PanelRegistrarUsuario extends javax.swing.JPanel {
     private javax.swing.JTextField campoPassword;
     private javax.swing.JComboBox<String> campoRol;
     private javax.swing.JTextField campoTelefono;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
