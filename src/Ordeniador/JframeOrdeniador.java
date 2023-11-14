@@ -4,6 +4,9 @@
  */
 package Ordeniador;
 
+import com.formdev.flatlaf.FlatLightLaf;
+import javax.swing.UIManager;
+
 /**
  *
  * @author juand
@@ -26,200 +29,115 @@ public class JframeOrdeniador extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        PanelAbsolute = new javax.swing.JPanel();
-        PanelLateral = new javax.swing.JPanel();
-        Bienvenido = new javax.swing.JLabel();
-        jSeparator1 = new javax.swing.JSeparator();
-        nombreOrdeniador = new javax.swing.JLabel();
-        buttonnCerrarSesion = new javax.swing.JButton();
-        buttonRegistrarordeniador = new javax.swing.JButton();
-        PanelSuperior = new javax.swing.JPanel();
-        TituloPrincipal = new javax.swing.JLabel();
-        nombreFinca = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
+        background = new javax.swing.JPanel();
+        menu = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        content = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        PanelAbsolute.setBackground(new java.awt.Color(255, 255, 255));
+        menu.setBackground(new java.awt.Color(0, 143, 111));
 
-        PanelLateral.setBackground(new java.awt.Color(0, 153, 51));
-        PanelLateral.setAlignmentX(3.0F);
-        PanelLateral.setPreferredSize(new java.awt.Dimension(271, 0));
+        jButton1.setBackground(new java.awt.Color(28, 163, 129));
+        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/icon-list.png"))); // NOI18N
+        jButton1.setText("Listado de vacas");
+        jButton1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 10, 1, 1, new java.awt.Color(0, 0, 0)));
+        jButton1.setBorderPainted(false);
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jButton1.setIconTextGap(12);
 
-        Bienvenido.setFont(new java.awt.Font("HP Simplified Hans", 2, 24)); // NOI18N
-        Bienvenido.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Bienvenido.setText("BIENVENIDO");
+        jButton2.setBackground(new java.awt.Color(28, 163, 129));
+        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/log-out-icon.png"))); // NOI18N
+        jButton2.setText("Cerrar sesión");
+        jButton2.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 10, 1, 1, new java.awt.Color(0, 0, 0)));
+        jButton2.setBorderPainted(false);
+        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jButton2.setIconTextGap(12);
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
-        jSeparator1.setBackground(new java.awt.Color(255, 255, 255));
-        jSeparator1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-
-        nombreOrdeniador.setFont(new java.awt.Font("HP Simplified Hans", 2, 18)); // NOI18N
-        nombreOrdeniador.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        nombreOrdeniador.setText("Nombre LECHERO");
-
-        buttonnCerrarSesion.setBackground(new java.awt.Color(204, 0, 0));
-        buttonnCerrarSesion.setFont(new java.awt.Font("HP Simplified Hans", 0, 18)); // NOI18N
-        buttonnCerrarSesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/cerrar-sesion1.png"))); // NOI18N
-        buttonnCerrarSesion.setText("Cerrar Sesion");
-        buttonnCerrarSesion.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        buttonnCerrarSesion.setBorderPainted(false);
-        buttonnCerrarSesion.setContentAreaFilled(false);
-        buttonnCerrarSesion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        buttonnCerrarSesion.setFocusPainted(false);
-        buttonnCerrarSesion.setFocusable(false);
-        buttonnCerrarSesion.setOpaque(true);
-        buttonnCerrarSesion.setRolloverEnabled(false);
-
-        buttonRegistrarordeniador.setBackground(new java.awt.Color(0, 102, 0));
-        buttonRegistrarordeniador.setFont(new java.awt.Font("HP Simplified Hans", 1, 18)); // NOI18N
-        buttonRegistrarordeniador.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/admin1.png"))); // NOI18N
-        buttonRegistrarordeniador.setText("Registrar Lechero");
-        buttonRegistrarordeniador.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        buttonRegistrarordeniador.setBorderPainted(false);
-        buttonRegistrarordeniador.setContentAreaFilled(false);
-        buttonRegistrarordeniador.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        buttonRegistrarordeniador.setFocusPainted(false);
-        buttonRegistrarordeniador.setFocusable(false);
-        buttonRegistrarordeniador.setOpaque(true);
-        buttonRegistrarordeniador.setRolloverEnabled(false);
-
-        javax.swing.GroupLayout PanelLateralLayout = new javax.swing.GroupLayout(PanelLateral);
-        PanelLateral.setLayout(PanelLateralLayout);
-        PanelLateralLayout.setHorizontalGroup(
-            PanelLateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Bienvenido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(PanelLateralLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(PanelLateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSeparator1)
-                    .addGroup(PanelLateralLayout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(nombreOrdeniador, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))))
-            .addGroup(PanelLateralLayout.createSequentialGroup()
-                .addGroup(PanelLateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(buttonnCerrarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(buttonRegistrarordeniador, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, Short.MAX_VALUE))
+        javax.swing.GroupLayout menuLayout = new javax.swing.GroupLayout(menu);
+        menu.setLayout(menuLayout);
+        menuLayout.setHorizontalGroup(
+            menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
-        PanelLateralLayout.setVerticalGroup(
-            PanelLateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelLateralLayout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addComponent(Bienvenido, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(nombreOrdeniador, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(buttonRegistrarordeniador, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 415, Short.MAX_VALUE)
-                .addComponent(buttonnCerrarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
+        menuLayout.setVerticalGroup(
+            menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(menuLayout.createSequentialGroup()
+                .addGap(110, 110, 110)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 291, Short.MAX_VALUE)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
-        PanelSuperior.setBackground(new java.awt.Color(0, 153, 51));
-        PanelSuperior.setPreferredSize(new java.awt.Dimension(770, 120));
+        content.setBackground(new java.awt.Color(255, 255, 255));
 
-        TituloPrincipal.setBackground(new java.awt.Color(255, 255, 255));
-        TituloPrincipal.setFont(new java.awt.Font("HP Simplified Hans", 1, 36)); // NOI18N
-        TituloPrincipal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        TituloPrincipal.setText("LISTA DE GANADO");
-
-        nombreFinca.setFont(new java.awt.Font("HP Simplified Hans", 1, 36)); // NOI18N
-        nombreFinca.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        nombreFinca.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/hogar (1).png"))); // NOI18N
-        nombreFinca.setText("TULIA");
-
-        javax.swing.GroupLayout PanelSuperiorLayout = new javax.swing.GroupLayout(PanelSuperior);
-        PanelSuperior.setLayout(PanelSuperiorLayout);
-        PanelSuperiorLayout.setHorizontalGroup(
-            PanelSuperiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelSuperiorLayout.createSequentialGroup()
-                .addComponent(TituloPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 523, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(nombreFinca)
-                .addContainerGap(103, Short.MAX_VALUE))
+        javax.swing.GroupLayout contentLayout = new javax.swing.GroupLayout(content);
+        content.setLayout(contentLayout);
+        contentLayout.setHorizontalGroup(
+            contentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 790, Short.MAX_VALUE)
         );
-        PanelSuperiorLayout.setVerticalGroup(
-            PanelSuperiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelSuperiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(TituloPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(nombreFinca, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+        contentLayout.setVerticalGroup(
+            contentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 770, Short.MAX_VALUE)
+        javax.swing.GroupLayout backgroundLayout = new javax.swing.GroupLayout(background);
+        background.setLayout(backgroundLayout);
+        backgroundLayout.setHorizontalGroup(
+            backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(backgroundLayout.createSequentialGroup()
+                .addComponent(menu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(content, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 570, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout PanelAbsoluteLayout = new javax.swing.GroupLayout(PanelAbsolute);
-        PanelAbsolute.setLayout(PanelAbsoluteLayout);
-        PanelAbsoluteLayout.setHorizontalGroup(
-            PanelAbsoluteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelLateral, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGroup(PanelAbsoluteLayout.createSequentialGroup()
-                .addGap(270, 270, 270)
-                .addGroup(PanelAbsoluteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(PanelSuperior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-        );
-        PanelAbsoluteLayout.setVerticalGroup(
-            PanelAbsoluteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelSuperior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(PanelLateral, javax.swing.GroupLayout.PREFERRED_SIZE, 690, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGroup(PanelAbsoluteLayout.createSequentialGroup()
-                .addGap(120, 120, 120)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        backgroundLayout.setVerticalGroup(
+            backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(menu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(content, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelAbsolute, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelAbsolute, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
         try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JframeOrdeniador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JframeOrdeniador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JframeOrdeniador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JframeOrdeniador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            UIManager.setLookAndFeel( new FlatLightLaf() );
+        } catch( Exception ex ) {
+            System.err.println( "Failed to initialize LaF" );
         }
-        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -230,16 +148,10 @@ public class JframeOrdeniador extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel Bienvenido;
-    private javax.swing.JPanel PanelAbsolute;
-    private javax.swing.JPanel PanelLateral;
-    private javax.swing.JPanel PanelSuperior;
-    private javax.swing.JLabel TituloPrincipal;
-    private javax.swing.JButton buttonRegistrarordeniador;
-    private javax.swing.JButton buttonnCerrarSesion;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JLabel nombreFinca;
-    private javax.swing.JLabel nombreOrdeniador;
+    private javax.swing.JPanel background;
+    private javax.swing.JPanel content;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JPanel menu;
     // End of variables declaration//GEN-END:variables
 }
