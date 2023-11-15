@@ -1,6 +1,6 @@
 package PanelesViews;
 
-import Administrador.JframeAdministrador;
+import Administrador.JFrameAdministrator;
 import Clases.Conexion;
 import java.util.HashMap;
 import java.util.Map;
@@ -8,8 +8,8 @@ import java.util.Map;
 
 public class PanelRegistrarUsuario extends javax.swing.JPanel {
     Conexion Conexion;
-    JframeAdministrador ventana;
-    public PanelRegistrarUsuario(JframeAdministrador ventana) {
+    JFrameAdministrator ventana;
+    public PanelRegistrarUsuario(JFrameAdministrator ventana) {
         this.ventana = ventana;
         this.Conexion = new Conexion();
         initComponents();
@@ -241,7 +241,7 @@ public class PanelRegistrarUsuario extends javax.swing.JPanel {
             
             System.out.println("Usuario Insertado");
             // hace que recargue el panel de listar 
-            JframeAdministrador ventana2 = new JframeAdministrador();
+            JFrameAdministrator ventana2 = new JFrameAdministrator();
             setVisible(false);
             ventana.showUsers(); 
             //dispose();
@@ -255,7 +255,7 @@ public class PanelRegistrarUsuario extends javax.swing.JPanel {
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
     private void buttonVolverUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonVolverUserActionPerformed
-        JframeAdministrador ventana2 = new JframeAdministrador();
+        JFrameAdministrator ventana2 = new JFrameAdministrator();
         setVisible(false);
         ventana.showUsers();
     }//GEN-LAST:event_buttonVolverUserActionPerformed

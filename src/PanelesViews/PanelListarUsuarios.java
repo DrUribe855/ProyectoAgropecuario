@@ -1,7 +1,7 @@
 package PanelesViews;
 
 
-import Administrador.JframeAdministrador;
+import Administrador.JFrameAdministrator;
 import Clases.ButtonEditor;
 import Clases.ButtonRenderer;
 import Clases.Conexion;
@@ -24,12 +24,13 @@ public class PanelListarUsuarios extends javax.swing.JPanel {
 
     Conexion conexion;
     DefaultTableModel modelo;
-    private JframeAdministrador ventanaAdministrador;
+    private JFrameAdministrator ventanaAdministrador;
     
-    public PanelListarUsuarios(JframeAdministrador administrador) {
+    public PanelListarUsuarios(JFrameAdministrator administrador) {
         this.conexion = new Conexion();
         this.ventanaAdministrador = administrador;
         initComponents();
+        initAlternStyles();
         initAlternComponents();
         fillData();
         
@@ -42,6 +43,10 @@ public class PanelListarUsuarios extends javax.swing.JPanel {
 
         this.TableUsuarios.getColumn("Eliminar").setCellRenderer(new ButtonRenderer());
         this.TableUsuarios.getColumn("Eliminar").setCellEditor(new ButtonEditor(new JCheckBox()));
+    }
+    
+    public void initAlternStyles(){
+        jButton1.putClientProperty( "JButton.buttonType", "roundRect" );
     }
     
     
@@ -132,11 +137,11 @@ public class PanelListarUsuarios extends javax.swing.JPanel {
         PanelTableUsuarios = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         TableUsuarios = new javax.swing.JTable();
-        btnRegistrarUsuario = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         PanelTableUsuarios.setBackground(new java.awt.Color(255, 255, 255));
 
-        TableUsuarios.setBackground(new java.awt.Color(204, 204, 204));
+        TableUsuarios.setBackground(new java.awt.Color(255, 255, 255));
         TableUsuarios.setForeground(new java.awt.Color(0, 0, 0));
         TableUsuarios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -156,12 +161,13 @@ public class PanelListarUsuarios extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(TableUsuarios);
 
-        btnRegistrarUsuario.setBackground(new java.awt.Color(0, 153, 0));
-        btnRegistrarUsuario.setFont(new java.awt.Font("HP Simplified Hans", 1, 18)); // NOI18N
-        btnRegistrarUsuario.setText("Registrar Usuario");
-        btnRegistrarUsuario.addActionListener(new java.awt.event.ActionListener() {
+        jButton1.setBackground(new java.awt.Color(0, 143, 111));
+        jButton1.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("Registrar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRegistrarUsuarioActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
 
@@ -169,23 +175,23 @@ public class PanelListarUsuarios extends javax.swing.JPanel {
         PanelTableUsuarios.setLayout(PanelTableUsuariosLayout);
         PanelTableUsuariosLayout.setHorizontalGroup(
             PanelTableUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelTableUsuariosLayout.createSequentialGroup()
-                .addContainerGap(646, Short.MAX_VALUE)
-                .addComponent(btnRegistrarUsuario)
-                .addGap(17, 17, 17))
             .addGroup(PanelTableUsuariosLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 857, Short.MAX_VALUE)
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelTableUsuariosLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(15, 15, 15))
         );
         PanelTableUsuariosLayout.setVerticalGroup(
             PanelTableUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelTableUsuariosLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnRegistrarUsuario)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addGap(20, 20, 20)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 457, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -200,15 +206,15 @@ public class PanelListarUsuarios extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnRegistrarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarUsuarioActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         this.ventanaAdministrador.showInsertUsers();
-    }//GEN-LAST:event_btnRegistrarUsuarioActionPerformed
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PanelTableUsuarios;
     private javax.swing.JTable TableUsuarios;
-    private javax.swing.JButton btnRegistrarUsuario;
+    private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

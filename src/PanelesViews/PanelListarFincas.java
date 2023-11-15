@@ -1,7 +1,7 @@
 
 package PanelesViews;
 
-import Administrador.JframeAdministrador;
+import Administrador.JFrameAdministrator;
 import Clases.ButtonEditor;
 import Clases.ButtonRenderer;
 import Clases.Conexion;
@@ -25,13 +25,14 @@ public class PanelListarFincas extends javax.swing.JPanel {
     
     Conexion conexion;
     DefaultTableModel modelo;
-    private JframeAdministrador ventanaAdministrador;
+    private JFrameAdministrator ventanaAdministrador;
     
-    public PanelListarFincas(JframeAdministrador administrador) {
+    public PanelListarFincas(JFrameAdministrator administrador) {
         this.conexion = new Conexion();
         this.ventanaAdministrador = administrador;
         initComponents();
         initAlternComponents();
+        initAlternStyles();
         fillData();
     }
     public void initAlternComponents(){
@@ -41,6 +42,10 @@ public class PanelListarFincas extends javax.swing.JPanel {
 
         this.TableFincas.getColumn("Eliminar").setCellRenderer(new ButtonRenderer());
         this.TableFincas.getColumn("Eliminar").setCellEditor(new ButtonEditor(new JCheckBox()));
+    }
+    
+    public void initAlternStyles(){
+        jButton1.putClientProperty( "JButton.buttonType", "roundRect" );
     }
     
     public void fillData(){
@@ -116,7 +121,7 @@ public class PanelListarFincas extends javax.swing.JPanel {
         PanelTable = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         TableFincas = new javax.swing.JTable();
-        buttonRegisrarFinca = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         PanelTable.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -148,12 +153,13 @@ public class PanelListarFincas extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(TableFincas);
 
-        buttonRegisrarFinca.setBackground(new java.awt.Color(0, 153, 0));
-        buttonRegisrarFinca.setFont(new java.awt.Font("HP Simplified Hans", 1, 18)); // NOI18N
-        buttonRegisrarFinca.setText("Registrar Finca");
-        buttonRegisrarFinca.addActionListener(new java.awt.event.ActionListener() {
+        jButton1.setBackground(new java.awt.Color(0, 143, 111));
+        jButton1.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("Registrar finca");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonRegisrarFincaActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
 
@@ -162,70 +168,61 @@ public class PanelListarFincas extends javax.swing.JPanel {
         PanelTableLayout.setHorizontalGroup(
             PanelTableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelTableLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(buttonRegisrarFinca)
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 789, Short.MAX_VALUE)
                 .addContainerGap())
-            .addGroup(PanelTableLayout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 752, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelTableLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20))
         );
         PanelTableLayout.setVerticalGroup(
             PanelTableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelTableLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(buttonRegisrarFinca)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(8, 8, 8))
+                .addGap(12, 12, 12)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 417, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout PanelTableFincasLayout = new javax.swing.GroupLayout(PanelTableFincas);
         PanelTableFincas.setLayout(PanelTableFincasLayout);
         PanelTableFincasLayout.setHorizontalGroup(
             PanelTableFincasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelTableFincasLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(PanelTable, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(PanelTable, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         PanelTableFincasLayout.setVerticalGroup(
             PanelTableFincasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelTable, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(PanelTable, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 776, Short.MAX_VALUE)
+            .addGap(0, 801, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(PanelTableFincas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addComponent(PanelTableFincas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 494, Short.MAX_VALUE)
+            .addGap(0, 498, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(PanelTableFincas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addComponent(PanelTableFincas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void buttonRegisrarFincaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRegisrarFincaActionPerformed
-                                              
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         this.ventanaAdministrador.showInsertFincas();
-    }//GEN-LAST:event_buttonRegisrarFincaActionPerformed
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PanelTable;
     private javax.swing.JPanel PanelTableFincas;
     private javax.swing.JTable TableFincas;
-    private javax.swing.JButton buttonRegisrarFinca;
+    private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 
