@@ -123,19 +123,16 @@ public class JframeModificarUsuario extends javax.swing.JFrame {
         campoDocumento.setBackground(new java.awt.Color(255, 255, 255));
         campoDocumento.setForeground(new java.awt.Color(0, 0, 0));
         campoDocumento.setBordeColorFocus(new java.awt.Color(0, 0, 0));
-        campoDocumento.setFocusable(false);
         campoDocumento.setPlaceholder("Ingrese su documento");
 
         campoApellidos.setBackground(new java.awt.Color(255, 255, 255));
         campoApellidos.setForeground(new java.awt.Color(0, 0, 0));
         campoApellidos.setBordeColorFocus(new java.awt.Color(0, 0, 0));
-        campoApellidos.setFocusable(false);
         campoApellidos.setPlaceholder("Ingrese sus apellidos");
 
         campoEmail.setBackground(new java.awt.Color(255, 255, 255));
         campoEmail.setForeground(new java.awt.Color(0, 0, 0));
         campoEmail.setBordeColorFocus(new java.awt.Color(0, 0, 0));
-        campoEmail.setFocusable(false);
         campoEmail.setPlaceholder("Ingrese su E-mail");
 
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
@@ -143,13 +140,11 @@ public class JframeModificarUsuario extends javax.swing.JFrame {
         campoNombres.setBackground(new java.awt.Color(255, 255, 255));
         campoNombres.setForeground(new java.awt.Color(0, 0, 0));
         campoNombres.setBordeColorFocus(new java.awt.Color(0, 0, 0));
-        campoNombres.setFocusable(false);
         campoNombres.setPlaceholder("Ingrese los nombres");
 
         campoTelefono.setBackground(new java.awt.Color(255, 255, 255));
         campoTelefono.setForeground(new java.awt.Color(0, 0, 0));
         campoTelefono.setBordeColorFocus(new java.awt.Color(0, 0, 0));
-        campoTelefono.setFocusable(false);
         campoTelefono.setPlaceholder("Ingrese el télefono");
 
         campoRol.setBackground(new java.awt.Color(255, 255, 255));

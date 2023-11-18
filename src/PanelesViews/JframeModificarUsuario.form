@@ -296,7 +296,6 @@
             <Property name="bordeColorFocus" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
-            <Property name="focusable" type="boolean" value="false"/>
             <Property name="placeholder" type="java.lang.String" value="Ingrese su documento"/>
           </Properties>
         </Component>
@@ -311,7 +310,6 @@
             <Property name="bordeColorFocus" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
-            <Property name="focusable" type="boolean" value="false"/>
             <Property name="placeholder" type="java.lang.String" value="Ingrese sus apellidos"/>
           </Properties>
         </Component>
@@ -326,7 +324,6 @@
             <Property name="bordeColorFocus" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
-            <Property name="focusable" type="boolean" value="false"/>
             <Property name="placeholder" type="java.lang.String" value="Ingrese su E-mail"/>
           </Properties>
         </Component>
@@ -346,7 +343,6 @@
             <Property name="bordeColorFocus" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
-            <Property name="focusable" type="boolean" value="false"/>
             <Property name="placeholder" type="java.lang.String" value="Ingrese los nombres"/>
           </Properties>
         </Component>
@@ -361,7 +357,6 @@
             <Property name="bordeColorFocus" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
-            <Property name="focusable" type="boolean" value="false"/>
             <Property name="placeholder" type="java.lang.String" value="Ingrese el t&#xe9;lefono"/>
           </Properties>
         </Component>
