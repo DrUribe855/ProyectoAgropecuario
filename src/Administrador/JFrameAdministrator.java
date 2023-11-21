@@ -5,6 +5,7 @@ import PanelesViews.PanelListarUsuarios;
 import PanelesViews.PanelListarVacas;
 import PanelesViews.PanelRegistrarUsuario;
 import PanelesViews.PanelRegistrarFinca;
+import PanelesViews.PanelRegistrarVaca;
 import com.formdev.flatlaf.FlatLightLaf;
 import java.awt.BorderLayout;
 import javax.swing.UIManager;
@@ -46,6 +47,18 @@ public class JFrameAdministrator extends javax.swing.JFrame {
         
        panelEstatico.revalidate();
        panelEstatico.repaint();
+    }
+    
+    public void showInsertCows(){
+        this.panelEstatico.removeAll();
+        this.panelEstatico.repaint();
+        
+        PanelRegistrarVaca ventanaPanelRegistrarVacas = new PanelRegistrarVaca(this);
+        ventanaPanelRegistrarVacas.setSize(this.panelEstatico.getSize());
+        panelEstatico.add(ventanaPanelRegistrarVacas, BorderLayout.CENTER);
+        
+        panelEstatico.revalidate();
+        panelEstatico.repaint();
     }
     
     public void showUsers(){

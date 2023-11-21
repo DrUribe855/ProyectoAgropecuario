@@ -62,7 +62,7 @@ public class PanelListarVacas extends javax.swing.JPanel {
              btn_editar.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    //updateFinca(finca);
+                    updateVaca(vaca);
                     System.out.println("Modificar");
                 }
             });
@@ -86,7 +86,8 @@ public class PanelListarVacas extends javax.swing.JPanel {
         String descripcion = vaca.getDescripcion();
         String estado = vaca.getEstado();
         
-        //JFrameModificarVacas
+        JframeModificarVacas ventanaUpdate = new JframeModificarVacas(this.ventanaAdministrador, id_vaca, id_finca, descripcion, alias, estado);
+        ventanaUpdate.setVisible(true);
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -115,7 +116,7 @@ public class PanelListarVacas extends javax.swing.JPanel {
                 java.lang.Integer.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false
+                false, false, false, false, false, true
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -131,6 +132,11 @@ public class PanelListarVacas extends javax.swing.JPanel {
         buttonRegistrarVacas.setBackground(new java.awt.Color(0, 153, 0));
         buttonRegistrarVacas.setFont(new java.awt.Font("HP Simplified Hans", 1, 18)); // NOI18N
         buttonRegistrarVacas.setText("Registrar Vacas");
+        buttonRegistrarVacas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonRegistrarVacasActionPerformed(evt);
+            }
+        });
 
         jButton1.setBackground(new java.awt.Color(204, 0, 0));
         jButton1.setFont(new java.awt.Font("HP Simplified Hans", 1, 18)); // NOI18N
@@ -194,6 +200,10 @@ public class PanelListarVacas extends javax.swing.JPanel {
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void buttonRegistrarVacasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRegistrarVacasActionPerformed
+        this.ventanaAdministrador.showInsertCows();
+    }//GEN-LAST:event_buttonRegistrarVacasActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
