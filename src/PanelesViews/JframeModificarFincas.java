@@ -37,7 +37,6 @@ public class JframeModificarFincas extends javax.swing.JFrame {
     public void fillInputsUsers(){
         campoIdFinca.setText(this.id_finca.toString());
         campoNombreFinca.setText(this.nombre_finca);
-        
     }
 
     
