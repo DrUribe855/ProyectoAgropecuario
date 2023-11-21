@@ -2,6 +2,7 @@ package Administrador;
 
 import PanelesViews.PanelListarFincas;
 import PanelesViews.PanelListarUsuarios;
+import PanelesViews.PanelListarVacas;
 import PanelesViews.PanelRegistrarUsuario;
 import PanelesViews.PanelRegistrarFinca;
 import com.formdev.flatlaf.FlatLightLaf;
@@ -12,6 +13,7 @@ public class JFrameAdministrator extends javax.swing.JFrame {
 
     PanelRegistrarUsuario ventanaRegistroUsuario;
     PanelRegistrarFinca ventanaRegistrarFincas;
+    PanelListarVacas ventanaListarVacas;
     
     
     public JFrameAdministrator() {
@@ -19,6 +21,7 @@ public class JFrameAdministrator extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         this.ventanaRegistroUsuario = new PanelRegistrarUsuario(this);
         this.ventanaRegistrarFincas = new PanelRegistrarFinca(this);
+        this.ventanaListarVacas = new PanelListarVacas(this);
     }
     
     public void showInsertUsers(){
@@ -66,6 +69,18 @@ public class JFrameAdministrator extends javax.swing.JFrame {
         ventanaPanelListarFincas.setSize(this.panelEstatico.getSize());
         ventanaPanelListarFincas.setLocation(0,0);
         panelEstatico.add(ventanaPanelListarFincas, BorderLayout.CENTER);
+        panelEstatico.revalidate();
+        panelEstatico.repaint();
+    }
+    
+    public void showVacas(){
+        this.panelEstatico.removeAll();
+        this.panelEstatico.repaint();
+        
+        PanelListarVacas ventanaListarVacas = new PanelListarVacas(this);
+        ventanaListarVacas.setSize(this.panelEstatico.getSize());
+        ventanaListarVacas.setLocation(0,0);
+        panelEstatico.add(ventanaListarVacas, BorderLayout.CENTER);
         panelEstatico.revalidate();
         panelEstatico.repaint();
     }
@@ -191,7 +206,7 @@ public class JFrameAdministrator extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        this.showVacas();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void buttonAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAdminActionPerformed
