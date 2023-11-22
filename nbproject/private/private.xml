@@ -3,9 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/USUARIO/Documents/ProyectoAgropecuario/src/PanelesViews/PanelModificarVaca.java</file>
-            <file>file:/C:/Users/USUARIO/Documents/ProyectoAgropecuario/src/PanelesViews/PanelListarVacas.java</file>
-            <file>file:/C:/Users/USUARIO/Documents/ProyectoAgropecuario/src/Clases/Vaca.java</file>
+            <file>file:/C:/Users/LENOVO/Documents/ProyectoAgropecuario/src/PanelesViews/PanelRegistrarVaca.java</file>
+            <file>file:/C:/Users/LENOVO/Documents/ProyectoAgropecuario/src/PanelesViews/JframeModificarFincas.java</file>
+            <file>file:/C:/Users/LENOVO/Documents/ProyectoAgropecuario/src/PanelesViews/PanelListarVacas.java</file>
+            <file>file:/C:/Users/LENOVO/Documents/ProyectoAgropecuario/src/PanelesViews/JframeRegistrarFinca.java</file>
+            <file>file:/C:/Users/LENOVO/Documents/ProyectoAgropecuario/src/Clases/Alerta.java</file>
+            <file>file:/C:/Users/LENOVO/Documents/ProyectoAgropecuario/src/PanelesViews/PanelRegistrarUsuario.java</file>
+            <file>file:/C:/Users/LENOVO/Documents/ProyectoAgropecuario/src/Administrador/JFrameAdministrator.java</file>
+            <file>file:/C:/Users/LENOVO/Documents/ProyectoAgropecuario/src/PanelesViews/PanelModificarVaca.java</file>
+            <file>file:/C:/Users/LENOVO/Documents/ProyectoAgropecuario/src/PanelesViews/PanelListarFincas.java</file>
+            <file>file:/C:/Users/LENOVO/Documents/ProyectoAgropecuario/src/PanelesViews/JframeModificarUsuario.java</file>
         </group>
     </open-files>
 </project-private>

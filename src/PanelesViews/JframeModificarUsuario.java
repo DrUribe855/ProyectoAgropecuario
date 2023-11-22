@@ -1,5 +1,6 @@
 package PanelesViews;
 
+import Clases.Alerta;
 import Clases.Conexion;
 import Clases.Usuario;
 import java.util.HashMap;
@@ -149,7 +150,7 @@ public class JframeModificarUsuario extends javax.swing.JFrame {
 
         campoRol.setBackground(new java.awt.Color(255, 255, 255));
         campoRol.setForeground(new java.awt.Color(0, 0, 0));
-        campoRol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Administrador", "Ordeñador" }));
+        campoRol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Admin", "Ordeñador" }));
 
         btnCancelar.setBackground(new java.awt.Color(255, 51, 51));
         btnCancelar.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
@@ -313,11 +314,11 @@ public class JframeModificarUsuario extends javax.swing.JFrame {
             System.out.println("Usuario Modificado");
             this.ventana.fillData();
             dispose();
-            //Alerta alert = new Alerta("Persona Creada","La persona fue creada correctamente","success");
+            Alerta alert = new Alerta("Usuario Modificado","El usuario fue modificado correctamente","success");
 
         }else{
-            //Alerta alert = new Alerta("Datos Inválidos", "Todos los campos son obligatorios.", "error");
-            //validarTodosInputs();
+            Alerta alert = new Alerta("Datos Vacios", "Todos los campos son obligatorios.", "warning");
+   
         }
     }//GEN-LAST:event_btnModificarActionPerformed
 
