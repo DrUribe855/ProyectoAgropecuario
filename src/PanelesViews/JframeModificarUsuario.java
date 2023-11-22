@@ -150,7 +150,7 @@ public class JframeModificarUsuario extends javax.swing.JFrame {
 
         campoRol.setBackground(new java.awt.Color(255, 255, 255));
         campoRol.setForeground(new java.awt.Color(0, 0, 0));
-        campoRol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Admin", "Ordeñador" }));
+        campoRol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Admin", "Ordeniador" }));
 
         btnCancelar.setBackground(new java.awt.Color(255, 51, 51));
         btnCancelar.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N

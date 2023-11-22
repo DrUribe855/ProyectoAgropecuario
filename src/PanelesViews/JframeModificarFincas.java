@@ -214,7 +214,6 @@ public class JframeModificarFincas extends javax.swing.JFrame {
 
         }else{
             Alerta alert = new Alerta("Datos Vacios", "Todos los campos son obligatorios.", "warning");
-            //validarTodosInputs();
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
