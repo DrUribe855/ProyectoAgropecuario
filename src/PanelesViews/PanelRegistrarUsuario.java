@@ -272,7 +272,7 @@ public class PanelRegistrarUsuario extends javax.swing.JPanel {
             insertData.put("email", email);
             insertData.put("passw", password);
             insertData.put("rol", rol);
-            System.out.println("Consumo INSERT: " + Conexion.consumoPOST("http://localhost/APIenPHPVacas/InsertUsuario.php", insertData));
+            System.out.println("Consumo INSERT: " + Conexion.consumoPOST("http://localhost/APIenPHPVacas/insertUsuario.php", insertData));
             
             
             System.out.println("Usuario Insertado");
