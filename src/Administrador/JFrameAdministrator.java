@@ -113,7 +113,6 @@ public class JFrameAdministrator extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         menu.setBackground(new java.awt.Color(0, 143, 111));
-        menu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton1.setBackground(new java.awt.Color(28, 163, 129));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -130,7 +129,6 @@ public class JFrameAdministrator extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        menu.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 270, 53));
 
         jButton2.setBackground(new java.awt.Color(28, 163, 129));
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -147,7 +145,6 @@ public class JFrameAdministrator extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        menu.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 460, 270, 53));
 
         buttonAdmin.setBackground(new java.awt.Color(28, 163, 129));
         buttonAdmin.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -164,7 +161,6 @@ public class JFrameAdministrator extends javax.swing.JFrame {
                 buttonAdminActionPerformed(evt);
             }
         });
-        menu.add(buttonAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 270, 53));
 
         buttonFincas.setBackground(new java.awt.Color(28, 163, 129));
         buttonFincas.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -181,7 +177,31 @@ public class JFrameAdministrator extends javax.swing.JFrame {
                 buttonFincasActionPerformed(evt);
             }
         });
-        menu.add(buttonFincas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 270, 53));
+
+        javax.swing.GroupLayout menuLayout = new javax.swing.GroupLayout(menu);
+        menu.setLayout(menuLayout);
+        menuLayout.setHorizontalGroup(
+            menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(buttonAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(buttonFincas, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        menuLayout.setVerticalGroup(
+            menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(menuLayout.createSequentialGroup()
+                .addGap(140, 140, 140)
+                .addGroup(menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(buttonAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(menuLayout.createSequentialGroup()
+                        .addGap(100, 100, 100)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(menuLayout.createSequentialGroup()
+                        .addGap(50, 50, 50)
+                        .addComponent(buttonFincas, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(167, 167, 167)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
 
         panelEstatico.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -207,7 +227,7 @@ public class JFrameAdministrator extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(menu, javax.swing.GroupLayout.DEFAULT_SIZE, 562, Short.MAX_VALUE)
+            .addComponent(menu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(panelEstatico, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 

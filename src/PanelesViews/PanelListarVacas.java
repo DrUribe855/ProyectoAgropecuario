@@ -28,6 +28,7 @@ public class PanelListarVacas extends javax.swing.JPanel {
         this.ventanaAdministrador = administrador;
         initComponents();
         initAlternComponents();
+        initAlternStyles();
         fillData();
     }
 
@@ -35,6 +36,10 @@ public class PanelListarVacas extends javax.swing.JPanel {
         modelo = (DefaultTableModel)TableVacas.getModel();
         this.TableVacas.getColumn("Modificar").setCellRenderer(new ButtonRenderer());
         this.TableVacas.getColumn("Modificar").setCellEditor(new ButtonEditor(new JCheckBox()));
+    }
+    
+    public void initAlternStyles(){
+        this.buttonRegistrarVacas.putClientProperty( "JButton.buttonType", "roundRect" );
     }
     
     public void fillData(){
@@ -98,7 +103,8 @@ public class PanelListarVacas extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         TableVacas = new javax.swing.JTable();
         buttonRegistrarVacas = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+
+        PanelTableVacas.setBackground(new java.awt.Color(255, 255, 255));
 
         PanelTable.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -129,8 +135,9 @@ public class PanelListarVacas extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(TableVacas);
 
-        buttonRegistrarVacas.setBackground(new java.awt.Color(0, 153, 0));
-        buttonRegistrarVacas.setFont(new java.awt.Font("HP Simplified Hans", 1, 18)); // NOI18N
+        buttonRegistrarVacas.setBackground(new java.awt.Color(0, 143, 111));
+        buttonRegistrarVacas.setFont(new java.awt.Font("HP Simplified Hans", 3, 18)); // NOI18N
+        buttonRegistrarVacas.setForeground(new java.awt.Color(255, 255, 255));
         buttonRegistrarVacas.setText("Registrar Vacas");
         buttonRegistrarVacas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -138,41 +145,33 @@ public class PanelListarVacas extends javax.swing.JPanel {
             }
         });
 
-        jButton1.setBackground(new java.awt.Color(204, 0, 0));
-        jButton1.setFont(new java.awt.Font("HP Simplified Hans", 1, 18)); // NOI18N
-        jButton1.setText("Volver");
-
         javax.swing.GroupLayout PanelTableLayout = new javax.swing.GroupLayout(PanelTable);
         PanelTable.setLayout(PanelTableLayout);
         PanelTableLayout.setHorizontalGroup(
             PanelTableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 706, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelTableLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(buttonRegistrarVacas)
                 .addContainerGap())
-            .addGroup(PanelTableLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButton1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 760, Short.MAX_VALUE)
         );
         PanelTableLayout.setVerticalGroup(
             PanelTableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelTableLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(12, Short.MAX_VALUE)
                 .addComponent(buttonRegistrarVacas)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 386, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
-                .addGap(12, 12, 12))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 423, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout PanelTableVacasLayout = new javax.swing.GroupLayout(PanelTableVacas);
         PanelTableVacas.setLayout(PanelTableVacasLayout);
         PanelTableVacasLayout.setHorizontalGroup(
             PanelTableVacasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelTable, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelTableVacasLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(PanelTable, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         PanelTableVacasLayout.setVerticalGroup(
             PanelTableVacasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -183,7 +182,7 @@ public class PanelListarVacas extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 706, Short.MAX_VALUE)
+            .addGap(0, 772, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -211,7 +210,6 @@ public class PanelListarVacas extends javax.swing.JPanel {
     private javax.swing.JPanel PanelTableVacas;
     private javax.swing.JTable TableVacas;
     private javax.swing.JButton buttonRegistrarVacas;
-    private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

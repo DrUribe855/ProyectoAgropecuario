@@ -26,11 +26,18 @@ public class JframeModificarVacas extends javax.swing.JFrame {
         this.conexion = new Conexion();
         initComponents();
         initAlternComponents();
+        initAlternStyles();
         fillInputsCows();
     }
     
     public void initAlternComponents(){
         setLocationRelativeTo(null);
+    }
+    
+    public void initAlternStyles(){
+        this.campoEstado.putClientProperty( "JComponent.roundRect", true );
+        this.btnCancelar2.putClientProperty( "JButton.buttonType", "roundRect" );
+        this.btnModificar.putClientProperty( "JButton.buttonType", "roundRect" );
     }
     
     public void fillInputsCows(){
@@ -110,7 +117,7 @@ public class JframeModificarVacas extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("HP Simplified Hans", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Modificar Usuario");
+        jLabel1.setText("Modificar vaca");
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("HP Simplified Hans", 1, 18)); // NOI18N
@@ -299,8 +306,6 @@ public class JframeModificarVacas extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCancelar;
-    private javax.swing.JButton btnCancelar1;
     private javax.swing.JButton btnCancelar2;
     private javax.swing.JButton btnModificar;
     private LIB.FSTexFieldMD campoAlias;
