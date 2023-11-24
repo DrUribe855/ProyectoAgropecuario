@@ -1,6 +1,7 @@
 package PanelesViews;
 
 import Administrador.JFrameAdministrator;
+import Clases.Alerta;
 import Clases.Conexion;
 import java.util.HashMap;
 import java.util.Map;
@@ -271,7 +272,7 @@ public class PanelRegistrarUsuario extends javax.swing.JPanel {
             insertData.put("email", email);
             insertData.put("passw", password);
             insertData.put("rol", rol);
-            System.out.println("Consumo INSERT: " + Conexion.consumoPOST("http://localhost/APIenPHPVacas/InsertUsuario.php", insertData));
+            System.out.println("Consumo INSERT: " + Conexion.consumoPOST("http://localhost/APIenPHPVacas/insertUsuario.php", insertData));
             
             
             System.out.println("Usuario Insertado");
@@ -281,10 +282,10 @@ public class PanelRegistrarUsuario extends javax.swing.JPanel {
             ventana.showUsers(); 
             //dispose();
             //menu.setVisible(true);
-            //Alerta alert = new Alerta("Persona Creada","La persona fue creada correctamente","success");
+            Alerta alert = new Alerta("Usuario Creado","El usuario fue creado correctamente","success");
             
         }else{
-            //Alerta alert = new Alerta("Datos Inválidos", "Todos los campos son obligatorios.", "error");
+            Alerta alert = new Alerta("Datos Vacios", "Todos los campos son obligatorios.", "warning");
             //validarTodosInputs();
         }
     }//GEN-LAST:event_btnRegistrarActionPerformed

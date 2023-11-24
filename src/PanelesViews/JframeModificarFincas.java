@@ -1,6 +1,7 @@
 
 package PanelesViews;
 
+import Clases.Alerta;
 import Clases.Conexion;
 import com.formdev.flatlaf.FlatLightLaf;
 import java.util.HashMap;
@@ -37,7 +38,6 @@ public class JframeModificarFincas extends javax.swing.JFrame {
     public void fillInputsUsers(){
         campoIdFinca.setText(this.id_finca.toString());
         campoNombreFinca.setText(this.nombre_finca);
-        
     }
 
     
@@ -210,11 +210,10 @@ public class JframeModificarFincas extends javax.swing.JFrame {
             System.out.println("Finca Modificada");
             this.ventana.fillData();
             dispose();
-            //Alerta alert = new Alerta("Persona Creada","La persona fue creada correctamente","success");
+            Alerta alert = new Alerta("Finca Modificada","La finca fue modificada correctamente","success");
 
         }else{
-            //Alerta alert = new Alerta("Datos Inválidos", "Todos los campos son obligatorios.", "error");
-            //validarTodosInputs();
+            Alerta alert = new Alerta("Datos Vacios", "Todos los campos son obligatorios.", "warning");
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 

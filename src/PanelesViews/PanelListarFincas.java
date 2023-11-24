@@ -45,7 +45,7 @@ public class PanelListarFincas extends javax.swing.JPanel {
     }
     
     public void initAlternStyles(){
-        jButton1.putClientProperty( "JButton.buttonType", "roundRect" );
+        btnRegistrarFinca.putClientProperty( "JButton.buttonType", "roundRect" );
     }
     
     public void fillData(){
@@ -121,7 +121,7 @@ public class PanelListarFincas extends javax.swing.JPanel {
         PanelTable = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         TableFincas = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
+        btnRegistrarFinca = new javax.swing.JButton();
 
         PanelTable.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -153,13 +153,13 @@ public class PanelListarFincas extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(TableFincas);
 
-        jButton1.setBackground(new java.awt.Color(0, 143, 111));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Registrar finca");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnRegistrarFinca.setBackground(new java.awt.Color(0, 143, 111));
+        btnRegistrarFinca.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        btnRegistrarFinca.setForeground(new java.awt.Color(255, 255, 255));
+        btnRegistrarFinca.setText("Registrar finca");
+        btnRegistrarFinca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnRegistrarFincaActionPerformed(evt);
             }
         });
 
@@ -173,14 +173,14 @@ public class PanelListarFincas extends javax.swing.JPanel {
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelTableLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnRegistrarFinca, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20))
         );
         PanelTableLayout.setVerticalGroup(
             PanelTableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelTableLayout.createSequentialGroup()
                 .addGap(12, 12, 12)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnRegistrarFinca, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 417, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(15, Short.MAX_VALUE))
@@ -213,16 +213,17 @@ public class PanelListarFincas extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        this.ventanaAdministrador.showInsertFincas();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void btnRegistrarFincaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarFincaActionPerformed
+        JframeRegistrarFinca ventana = new JframeRegistrarFinca(this.ventanaAdministrador);
+        ventana.setVisible(true);
+    }//GEN-LAST:event_btnRegistrarFincaActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PanelTable;
     private javax.swing.JPanel PanelTableFincas;
     private javax.swing.JTable TableFincas;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnRegistrarFinca;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 

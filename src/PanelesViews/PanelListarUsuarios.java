@@ -40,9 +40,6 @@ public class PanelListarUsuarios extends javax.swing.JPanel {
         modelo = (DefaultTableModel)TableUsuarios.getModel();
         this.TableUsuarios.getColumn("Modificar").setCellRenderer(new ButtonRenderer());
         this.TableUsuarios.getColumn("Modificar").setCellEditor(new ButtonEditor(new JCheckBox()));
-
-        this.TableUsuarios.getColumn("Eliminar").setCellRenderer(new ButtonRenderer());
-        this.TableUsuarios.getColumn("Eliminar").setCellEditor(new ButtonEditor(new JCheckBox()));
     }
     
     public void initAlternStyles(){
@@ -78,7 +75,7 @@ public class PanelListarUsuarios extends javax.swing.JPanel {
         for (Usuario usuario : usuarios) {
             
             JButton btn_editar = new JButton("Modificar");
-            JButton btn_eliminar = new JButton("Eliminar");
+            
             
             // Agregar un ActionListener al botón "Editar"
             btn_editar.addActionListener(new ActionListener() {
@@ -88,15 +85,9 @@ public class PanelListarUsuarios extends javax.swing.JPanel {
                 }
             });
 
-            // Agregar un ActionListener al botón "Eliminar"
-            btn_eliminar.addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    deleteUser(usuario);
-                }
-            });
             
-            Object[] filas = new Object[8];
+            
+            Object[] filas = new Object[7];
             filas[0] = usuario.getDocumento();
             filas[1] = usuario.getNombres();
             filas[2] = usuario.getApellidos();
@@ -104,7 +95,7 @@ public class PanelListarUsuarios extends javax.swing.JPanel {
             filas[4] = usuario.getRol();
             filas[5] = usuario.getEmail();
             filas[6] = btn_editar;
-            filas[7] = btn_eliminar;
+           
             
             modelo.addRow(filas);
         }
@@ -125,9 +116,7 @@ public class PanelListarUsuarios extends javax.swing.JPanel {
         ventanaUpdate.setVisible(true);
     }
     
-    public void deleteUser(Usuario usuario){
-        System.out.println("Nombre: "+usuario.getNombres());
-    }
+   
     
     
     @SuppressWarnings("unchecked")
@@ -148,11 +137,11 @@ public class PanelListarUsuarios extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Documento", "Nombre", "Apellido", "Telefono", "Rol", "E-mail", "Modificar", "Eliminar"
+                "Documento", "Nombre", "Apellido", "Telefono", "Rol", "E-mail", "Modificar"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, true, true
+                false, false, false, false, false, false, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {

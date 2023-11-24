@@ -4,7 +4,6 @@ import PanelesViews.PanelListarFincas;
 import PanelesViews.PanelListarUsuarios;
 import PanelesViews.PanelListarVacas;
 import PanelesViews.PanelRegistrarUsuario;
-import PanelesViews.PanelRegistrarFinca;
 import PanelesViews.PanelRegistrarVaca;
 import com.formdev.flatlaf.FlatLightLaf;
 import java.awt.BorderLayout;
@@ -13,7 +12,7 @@ import javax.swing.UIManager;
 public class JFrameAdministrator extends javax.swing.JFrame {
 
     PanelRegistrarUsuario ventanaRegistroUsuario;
-    PanelRegistrarFinca ventanaRegistrarFincas;
+    
     PanelListarVacas ventanaListarVacas;
     
     
@@ -21,7 +20,6 @@ public class JFrameAdministrator extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         this.ventanaRegistroUsuario = new PanelRegistrarUsuario(this);
-        this.ventanaRegistrarFincas = new PanelRegistrarFinca(this);
         this.ventanaListarVacas = new PanelListarVacas(this);
     }
     
@@ -37,7 +35,7 @@ public class JFrameAdministrator extends javax.swing.JFrame {
         panelEstatico.repaint();
     }
     
-    public void showInsertFincas(){
+    /*public void showInsertFincas(){
        this.panelEstatico.removeAll();
        this.panelEstatico.repaint();
         
@@ -47,7 +45,7 @@ public class JFrameAdministrator extends javax.swing.JFrame {
         
        panelEstatico.revalidate();
        panelEstatico.repaint();
-    }
+    }*/
     
     public void showInsertCows(){
         this.panelEstatico.removeAll();
@@ -277,3 +275,4 @@ public class JFrameAdministrator extends javax.swing.JFrame {
     private javax.swing.JPanel panelEstatico;
     // End of variables declaration//GEN-END:variables
 }
+                   
