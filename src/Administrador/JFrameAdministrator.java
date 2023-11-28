@@ -1,5 +1,6 @@
 package Administrador;
 
+import Login.Login;
 import PanelesViews.PanelListarFincas;
 import PanelesViews.PanelListarUsuarios;
 import PanelesViews.PanelListarVacas;
@@ -261,7 +262,7 @@ public class JFrameAdministrator extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new JFrameAdministrator().setVisible(true);
+                new Login().setVisible(true);
             }
         });
     }

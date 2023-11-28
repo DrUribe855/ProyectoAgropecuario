@@ -3,11 +3,16 @@
 
 package Login;
  
+import Administrador.JFrameAdministrator;
+import Clases.Alerta;
 import Clases.Conexion;
+import Ordeniador.JframeOrdeniador;
+import com.formdev.flatlaf.FlatLightLaf;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import java.util.HashMap;
 import java.util.Map;
+import javax.swing.UIManager;
 
 public class Login extends javax.swing.JFrame {
     
@@ -27,20 +32,44 @@ public class Login extends javax.swing.JFrame {
     public void validateUser(){
         String document = this.inputCedula.getText();
         char[] password = this.inputPassword.getPassword();
+        String passwordString = new String(password);
         
         if(!document.equals("") && !password.equals("")){
             
             Map<String, String> getData = new HashMap<>();
             getData.put("documento", document);
             
-            String textoJson = this.conexion.consumoGET("http://localhost/APIenPHP/getPersona.php", getData);
-            
+            String textoJson = this.conexion.consumoGET("http://localhost/APIenPHPVacas/getPersona.php", getData);
             if(!textoJson.equals("[]")){
                 JsonObject usuario = gson.fromJson(textoJson, JsonObject.class);
+                String documento = usuario.get("documento").getAsString();
+                String nombres = usuario.get("nombres").getAsString();
+                String apellidos = usuario.get("apellidos").getAsString();
+                String rol = usuario.get("rol").getAsString();
+                String contrasenia = usuario.get("passw").getAsString();
+                if(passwordString.equals(contrasenia) && document.equals(documento)){
+                    if(rol.equals("ADMIN")){
+                        System.out.println("Ingresó un admin");
+                        JFrameAdministrator ventana = new JFrameAdministrator();
+                        ventana.setVisible(true);
+                        this.dispose();
+                        Alerta alert = new Alerta("Validado","Se ha ingresado exitosamente","success");
+                    }else{
+                        System.out.println("Ingresó un ordeñador");
+                        JframeOrdeniador ventana = new JframeOrdeniador();
+                        ventana.setVisible(true);
+                        this.dispose();
+                        Alerta alert = new Alerta("Validado","Se ha ingresado exitosamente","success");
+                    }
+                }else{
+                    Alerta alert = new Alerta("Error","Alguno de los datos son incorrectos","error");
+                }
                 
             }
       
             
+        }else{
+            Alerta alert = new Alerta("Datos Vacios", "Todos los campos son obligatorios.", "warning");
         }
             
             
@@ -193,28 +222,11 @@ public class Login extends javax.swing.JFrame {
 
 
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
         try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            UIManager.setLookAndFeel( new FlatLightLaf() );
+        } catch( Exception ex ) {
+            System.err.println( "Failed to initialize LaF" );
         }
-        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {

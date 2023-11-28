@@ -7,17 +7,16 @@ package Ordeniador;
 import com.formdev.flatlaf.FlatLightLaf;
 import javax.swing.UIManager;
 
-/**
- *
- * @author juand
- */
+
 public class JframeOrdeniador extends javax.swing.JFrame {
 
-    /**
-     * Creates new form JframeOrdeniador
-     */
     public JframeOrdeniador() {
         initComponents();
+        initAlternComponents();
+    }
+    
+    public void initAlternComponents(){
+        setLocationRelativeTo(null);
     }
 
     /**

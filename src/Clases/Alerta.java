@@ -43,15 +43,20 @@ public class Alerta extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
+        etqTitulo.setBackground(new java.awt.Color(255, 255, 255));
         etqTitulo.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         etqTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         etqTitulo.setText("XXXXXx");
         etqTitulo.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         etqTitulo.setOpaque(true);
 
+        etqImagen.setBackground(new java.awt.Color(255, 255, 255));
         etqImagen.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         etqImagen.setOpaque(true);
 
+        etqMensaje.setBackground(new java.awt.Color(255, 255, 255));
         etqMensaje.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         etqMensaje.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         etqMensaje.setText("XXXXXXXXXXXXxxx");
