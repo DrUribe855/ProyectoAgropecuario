@@ -15,9 +15,13 @@ public class JframeRegistrarFinca extends javax.swing.JFrame {
         this.conexion = new Conexion();
         this.ventana = ventana;
         initComponents();
+        initAlternComponents();
+        
     }
 
-    
+    public void initAlternComponents(){
+        setLocationRelativeTo(null);
+    }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {

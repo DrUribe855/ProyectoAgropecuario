@@ -10,8 +10,11 @@ import Ordeniador.JframeOrdeniador;
 import com.formdev.flatlaf.FlatLightLaf;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
+import java.awt.Image;
+import java.awt.Taskbar;
 import java.util.HashMap;
 import java.util.Map;
+import javax.swing.ImageIcon;
 import javax.swing.UIManager;
 
 public class Login extends javax.swing.JFrame {
@@ -27,6 +30,7 @@ public class Login extends javax.swing.JFrame {
     
     public void initAlternComponents(){
         setLocationRelativeTo(null);
+        setIconImage(new ImageIcon(getClass().getResource("/Img/logo.jpeg")).getImage());
     }
     
     public void validateUser(){
@@ -42,6 +46,7 @@ public class Login extends javax.swing.JFrame {
             String textoJson = this.conexion.consumoGET("http://localhost/APIenPHPVacas/getPersona.php", getData);
             if(!textoJson.equals("[]")){
                 JsonObject usuario = gson.fromJson(textoJson, JsonObject.class);
+                //String id = usuario.get("id").getAsString();
                 String documento = usuario.get("documento").getAsString();
                 String nombres = usuario.get("nombres").getAsString();
                 String apellidos = usuario.get("apellidos").getAsString();
@@ -50,16 +55,14 @@ public class Login extends javax.swing.JFrame {
                 if(passwordString.equals(contrasenia) && document.equals(documento)){
                     if(rol.equals("ADMIN")){
                         System.out.println("Ingresó un admin");
-                        JFrameAdministrator ventana = new JFrameAdministrator();
+                        JFrameAdministrator ventana = new JFrameAdministrator(nombres);
                         ventana.setVisible(true);
                         this.dispose();
-                        Alerta alert = new Alerta("Validado","Se ha ingresado exitosamente","success");
                     }else{
                         System.out.println("Ingresó un ordeñador");
-                        JframeOrdeniador ventana = new JframeOrdeniador();
+                        JframeOrdeniador ventana = new JframeOrdeniador(nombres);
                         ventana.setVisible(true);
                         this.dispose();
-                        Alerta alert = new Alerta("Validado","Se ha ingresado exitosamente","success");
                     }
                 }else{
                     Alerta alert = new Alerta("Error","Alguno de los datos son incorrectos","error");
@@ -90,6 +93,7 @@ public class Login extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        setIconImage(getIconImage());
         setUndecorated(true);
         setResizable(false);
 
@@ -227,6 +231,8 @@ public class Login extends javax.swing.JFrame {
         } catch( Exception ex ) {
             System.err.println( "Failed to initialize LaF" );
         }
+        
+        
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {

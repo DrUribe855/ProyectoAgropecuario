@@ -1,6 +1,7 @@
 package Administrador;
 
 import Login.Login;
+import PanelesViews.PanelBienvenida;
 import PanelesViews.PanelListarFincas;
 import PanelesViews.PanelListarUsuarios;
 import PanelesViews.PanelListarVacas;
@@ -13,15 +14,35 @@ import javax.swing.UIManager;
 public class JFrameAdministrator extends javax.swing.JFrame {
 
     PanelRegistrarUsuario ventanaRegistroUsuario;
+    PanelBienvenida panelBienvenida;
     
     PanelListarVacas ventanaListarVacas;
     
+    String nombre;
+    //String id;
     
+    public JFrameAdministrator(String nombre) {
+        this.nombre = nombre;
+        //this.id = id;
+        initComponents();
+        initAlternComponents();
+        setLocationRelativeTo(null);
+        this.panelBienvenida = new PanelBienvenida();
+        this.ventanaRegistroUsuario = new PanelRegistrarUsuario(this);
+        this.ventanaListarVacas = new PanelListarVacas(this);
+    }
     public JFrameAdministrator() {
         initComponents();
         setLocationRelativeTo(null);
         this.ventanaRegistroUsuario = new PanelRegistrarUsuario(this);
         this.ventanaListarVacas = new PanelListarVacas(this);
+    }
+    
+    public void initAlternComponents(){
+        this.labelNombre.setText("¡Bienvenido " + this.nombre + "!");
+        PanelBienvenida panelBienvenida = new PanelBienvenida();
+        panelBienvenida.setSize(this.panelEstatico.getSize());
+        panelEstatico.add(panelBienvenida);
     }
     
     public void showInsertUsers(){
@@ -107,9 +128,13 @@ public class JFrameAdministrator extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         buttonAdmin = new javax.swing.JButton();
         buttonFincas = new javax.swing.JButton();
+        labelNombre = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
         panelEstatico = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         menu.setBackground(new java.awt.Color(0, 143, 111));
 
@@ -177,19 +202,38 @@ public class JFrameAdministrator extends javax.swing.JFrame {
             }
         });
 
+        labelNombre.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        labelNombre.setForeground(new java.awt.Color(255, 255, 255));
+        labelNombre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        jSeparator1.setForeground(new java.awt.Color(255, 255, 255));
+
         javax.swing.GroupLayout menuLayout = new javax.swing.GroupLayout(menu);
         menu.setLayout(menuLayout);
         menuLayout.setHorizontalGroup(
             menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(buttonAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(buttonFincas, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(menuLayout.createSequentialGroup()
+                .addGroup(menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(buttonAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonFincas, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(menuLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(labelNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 253, Short.MAX_VALUE)
+                    .addComponent(jSeparator1))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         menuLayout.setVerticalGroup(
             menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(menuLayout.createSequentialGroup()
-                .addGap(140, 140, 140)
+                .addGap(22, 22, 22)
+                .addComponent(labelNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(51, 51, 51)
                 .addGroup(menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(buttonAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(menuLayout.createSequentialGroup()
@@ -198,9 +242,12 @@ public class JFrameAdministrator extends javax.swing.JFrame {
                     .addGroup(menuLayout.createSequentialGroup()
                         .addGap(50, 50, 50)
                         .addComponent(buttonFincas, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(167, 167, 167)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 186, Short.MAX_VALUE)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18))
         );
+
+        getContentPane().add(menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 550));
 
         panelEstatico.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -212,23 +259,10 @@ public class JFrameAdministrator extends javax.swing.JFrame {
         );
         panelEstaticoLayout.setVerticalGroup(
             panelEstaticoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 550, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(menu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(panelEstatico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(menu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(panelEstatico, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        getContentPane().add(panelEstatico, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 0, 790, 550));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -272,6 +306,8 @@ public class JFrameAdministrator extends javax.swing.JFrame {
     private javax.swing.JButton buttonFincas;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JLabel labelNombre;
     private javax.swing.JPanel menu;
     private javax.swing.JPanel panelEstatico;
     // End of variables declaration//GEN-END:variables
