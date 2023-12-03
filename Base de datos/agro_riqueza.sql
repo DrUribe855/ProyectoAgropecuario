@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-11-2023 a las 16:15:50
--- Versión del servidor: 10.4.28-MariaDB
--- Versión de PHP: 8.0.28
+-- Tiempo de generación: 03-12-2023 a las 22:05:28
+-- Versión del servidor: 10.4.32-MariaDB
+-- Versión de PHP: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -120,10 +120,10 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id_usuario`, `documento`, `nombres`, `apellidos`, `telefono`, `rol`, `email`, `passw`) VALUES
-(1, '123456789', 'Juan', 'Perez', '1234567890', 'ORDENIADOR', 'perez@mail.com', 'contrase?a1'),
+(1, '123456789', 'Juan', 'Perez', '1234567890', 'ORDENIADOR', 'perez@mail.com', '12345'),
 (2, '987654321', 'Crespos', 'Loaiza', '9876543210', 'ORDENIADOR', 'mafegomez@gmail.com', 'contrase?a2'),
 (3, '456789123', 'Pechene', 'Lopez', '4567891230', 'ORDENIADOR', 'peche@mail.com', 'contrase?a3'),
-(4, '789123456', 'Juliana', 'Martinez', '7891234560', 'ORDENIADOR', 'juliana@mail.com', 'contrase?a4'),
+(4, '789123456', 'Juliana', 'Martinez', '7891234560', 'ORDENIADOR', 'juliana@mail.com', '123456'),
 (5, '654321987', 'Pedro', 'Sanchez', '6543219870', 'ORDENIADOR', 'pedrito@mail.com', 'contrase?a5'),
 (11, '1109185526', 'Andrey', 'Franco', '3103836118', 'ADMIN', 'andrey@mail.com', '12345'),
 (12, '18596647', 'Juan', 'Monsalve', '3106964352', 'ADMIN', 'monsalve@mail.com', '12345'),
@@ -152,7 +152,8 @@ INSERT INTO `vacas` (`id_vaca`, `id_finca`, `alias`, `descripcion`, `estado`) VA
 (2, 2, 'Vaca 2', 'Blancas con Manchas Negras', 'SIN ORDENAR'),
 (3, 3, 'Vaca 3', 'Blancas con Manchas Negras', 'ORDENIADA'),
 (4, 4, 'Vaca 4', 'Blancas con Manchas Negras', 'SIN ORDENAR'),
-(5, 5, 'Vaca 5', 'Blancas con Manchas Negras', 'SIN ORDENAR');
+(5, 5, 'Vaca 5', 'Blancas con Manchas Negras', 'SIN ORDENAR'),
+(6, 4, 'Morocha', 'Vaca grande, buena leche.', 'SIN ORDENAR');
 
 --
 -- Índices para tablas volcadas
@@ -225,7 +226,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `vacas`
 --
 ALTER TABLE `vacas`
-  MODIFY `id_vaca` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_vaca` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Restricciones para tablas volcadas
