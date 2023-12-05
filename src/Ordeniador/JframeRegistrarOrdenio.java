@@ -47,7 +47,7 @@ public class JframeRegistrarOrdenio extends javax.swing.JFrame {
         Date fechaHoraActual = new Date();
         
         // Crear un formato para la zona horaria de Colombia y el formato de 12 horas
-        SimpleDateFormat formatoColombia = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss a");
+        SimpleDateFormat formatoColombia = new SimpleDateFormat("yyyy/MM/dd hh:mm:ss a");
         formatoColombia.setTimeZone(TimeZone.getTimeZone("America/Bogota"));
 
         // Formatear la fecha y hora actual según la zona horaria de Colombia y el formato de 12 horas

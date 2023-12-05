@@ -111,6 +111,12 @@ public class PanelListarUsuarios extends javax.swing.JPanel {
         String telefono = usuario.getTelefono();
         String rol = usuario.getRol();
         String email = usuario.getEmail();
+        System.out.println(documento);
+        System.out.println(nombres);
+        System.out.println(apellidos);
+        System.out.println(telefono);
+        System.out.println(rol);
+        System.out.println(email);
         
         JframeModificarUsuario ventanaUpdate = new JframeModificarUsuario(this, documento, nombres, apellidos, telefono, rol, email);
         ventanaUpdate.setVisible(true);

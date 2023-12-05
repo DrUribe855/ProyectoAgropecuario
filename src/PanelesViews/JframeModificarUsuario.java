@@ -35,7 +35,6 @@ public class JframeModificarUsuario extends javax.swing.JFrame {
     
     public void initAlternComponents(){
         setLocationRelativeTo(null);
-        setLocationRelativeTo(null);
         setIconImage(new ImageIcon(getClass().getResource("/Img/logo.jpeg")).getImage());
     }
     
@@ -321,7 +320,15 @@ public class JframeModificarUsuario extends javax.swing.JFrame {
             System.out.println("Usuario Modificado");
             this.ventana.fillData();
             dispose();
+            System.out.println(documento);
+            System.out.println(nombres);
+            System.out.println(apellidos);
+            System.out.println(telefono);
+            System.out.println(rol);
+            System.out.println(email);
+            
             Alerta alert = new Alerta("Usuario Modificado","El usuario fue modificado correctamente","success");
+            
 
         }else{
             Alerta alert = new Alerta("Datos Vacios", "Todos los campos son obligatorios.", "warning");

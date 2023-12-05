@@ -9,6 +9,7 @@ import PanelesViews.PanelRegistrarUsuario;
 import PanelesViews.PanelRegistrarVaca;
 import com.formdev.flatlaf.FlatLightLaf;
 import java.awt.BorderLayout;
+import javax.swing.ImageIcon;
 import javax.swing.UIManager;
 
 public class JFrameAdministrator extends javax.swing.JFrame {
@@ -43,6 +44,7 @@ public class JFrameAdministrator extends javax.swing.JFrame {
         PanelBienvenida panelBienvenida = new PanelBienvenida();
         panelBienvenida.setSize(this.panelEstatico.getSize());
         panelEstatico.add(panelBienvenida);
+        setIconImage(new ImageIcon(getClass().getResource("/Img/logo.jpeg")).getImage());
     }
     
     public void showInsertUsers(){
