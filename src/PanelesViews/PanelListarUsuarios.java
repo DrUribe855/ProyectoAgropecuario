@@ -43,7 +43,7 @@ public class PanelListarUsuarios extends javax.swing.JPanel {
     }
     
     public void initAlternStyles(){
-        jButton1.putClientProperty( "JButton.buttonType", "roundRect" );
+        btnRegistrarUsuarios.putClientProperty( "JButton.buttonType", "roundRect" );
     }
     
     
@@ -126,7 +126,7 @@ public class PanelListarUsuarios extends javax.swing.JPanel {
         PanelTableUsuarios = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         TableUsuarios = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
+        btnRegistrarUsuarios = new javax.swing.JButton();
 
         PanelTableUsuarios.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -150,13 +150,13 @@ public class PanelListarUsuarios extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(TableUsuarios);
 
-        jButton1.setBackground(new java.awt.Color(0, 143, 111));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Registrar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnRegistrarUsuarios.setBackground(new java.awt.Color(0, 143, 111));
+        btnRegistrarUsuarios.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        btnRegistrarUsuarios.setForeground(new java.awt.Color(255, 255, 255));
+        btnRegistrarUsuarios.setText("Registrar");
+        btnRegistrarUsuarios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnRegistrarUsuariosActionPerformed(evt);
             }
         });
 
@@ -170,14 +170,14 @@ public class PanelListarUsuarios extends javax.swing.JPanel {
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelTableUsuariosLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnRegistrarUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(15, 15, 15))
         );
         PanelTableUsuariosLayout.setVerticalGroup(
             PanelTableUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelTableUsuariosLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnRegistrarUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 457, Short.MAX_VALUE)
                 .addContainerGap())
@@ -195,15 +195,15 @@ public class PanelListarUsuarios extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnRegistrarUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarUsuariosActionPerformed
         this.ventanaAdministrador.showInsertUsers();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnRegistrarUsuariosActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PanelTableUsuarios;
     private javax.swing.JTable TableUsuarios;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnRegistrarUsuarios;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }
