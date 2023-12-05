@@ -13,15 +13,15 @@ public class JframeModificarVacas extends javax.swing.JFrame {
     Conexion conexion;
     JFrameAdministrator ventana;
     Integer id_vaca;
-    String nombre_finca;
+    String id_finca;
     String descripcion;
     String alias;
     String estado;
     
-    public JframeModificarVacas(JFrameAdministrator ventana, Integer id_vaca, String nombre_finca, String descripcion, String alias, String estado) {
+    public JframeModificarVacas(JFrameAdministrator ventana, Integer id_vaca, String id_finca, String descripcion, String alias, String estado) {
         this.ventana = ventana;
         this.id_vaca = id_vaca;
-        this.nombre_finca = nombre_finca;
+        this.id_finca = id_finca;
         this.descripcion = descripcion;
         this.alias = alias;
         this.estado = estado;
@@ -35,7 +35,7 @@ public class JframeModificarVacas extends javax.swing.JFrame {
     public void initAlternComponents(){
         setLocationRelativeTo(null);
         setIconImage(new ImageIcon(getClass().getResource("/Img/logo.jpeg")).getImage());
-    
+        this.campoEstado.setSelectedIndex(-1);
     }
     
     public void initAlternStyles(){
@@ -46,9 +46,10 @@ public class JframeModificarVacas extends javax.swing.JFrame {
     
     public void fillInputsCows(){
         this.campoIdVaca.setText(this.id_vaca.toString());
-        this.campoFincaAsignada.setText(this.nombre_finca);
+        this.campoFincaAsignada.setText(this.id_finca);
         this.campoDescripcion.setText(this.descripcion);
         this.campoAlias.setText(this.alias);
+        Object objectEstado = this.estado.toString();
         this.campoEstado.setSelectedItem(this.estado);
     }
 
@@ -97,7 +98,7 @@ public class JframeModificarVacas extends javax.swing.JFrame {
 
         campoEstado.setBackground(new java.awt.Color(255, 255, 255));
         campoEstado.setForeground(new java.awt.Color(0, 0, 0));
-        campoEstado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "...", "Ordeniada", "Sin ordenar", "", "" }));
+        campoEstado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ordeniada", "Sin ordenar" }));
 
         btnCancelar2.setBackground(new java.awt.Color(255, 51, 51));
         btnCancelar2.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N

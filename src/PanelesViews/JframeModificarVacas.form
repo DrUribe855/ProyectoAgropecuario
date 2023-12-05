@@ -227,12 +227,9 @@
               <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="5">
-                <StringItem index="0" value="..."/>
-                <StringItem index="1" value="Ordeniada"/>
-                <StringItem index="2" value="Sin ordenar"/>
-                <StringItem index="3" value=""/>
-                <StringItem index="4" value=""/>
+              <StringArray count="2">
+                <StringItem index="0" value="Ordeniada"/>
+                <StringItem index="1" value="Sin ordenar"/>
               </StringArray>
             </Property>
           </Properties>
