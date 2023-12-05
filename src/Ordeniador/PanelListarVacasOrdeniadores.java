@@ -22,11 +22,13 @@ import javax.swing.table.DefaultTableModel;
 public class PanelListarVacasOrdeniadores extends javax.swing.JPanel {
 
     DefaultTableModel modelo;
+    JframeOrdeniador ventanaOrdeniador;
     Conexion conexion;
     String documento;
     
-    public PanelListarVacasOrdeniadores(String documento) {
+    public PanelListarVacasOrdeniadores(JframeOrdeniador ventanaOrdeniador, String documento) {
         this.conexion = new Conexion();
+        this.ventanaOrdeniador = ventanaOrdeniador;
         this.documento = documento;
         initComponents();
         initAlternComponents();
@@ -35,8 +37,14 @@ public class PanelListarVacasOrdeniadores extends javax.swing.JPanel {
 
     public void initAlternComponents(){
         modelo = (DefaultTableModel)Table.getModel();
-        this.Table.getColumn("Registrar").setCellRenderer(new ButtonRenderer());
-        this.Table.getColumn("Registrar").setCellEditor(new ButtonEditor(new JCheckBox()));
+        this.Table.getColumn("Ordeñar").setCellRenderer(new ButtonRenderer());
+        this.Table.getColumn("Ordeñar").setCellEditor(new ButtonEditor(new JCheckBox()));
+    }
+    
+    public void showInsertOrdenio(){
+        JframeRegistrarOrdenio ventana = new JframeRegistrarOrdenio(ventanaOrdeniador);
+        ventana.setVisible(true);
+        
     }
     
     public void fillData(){
@@ -65,14 +73,14 @@ public class PanelListarVacasOrdeniadores extends javax.swing.JPanel {
         for (VacasConOrdeniador vacas_ordenio : vacas_ordeniadores) {
             System.out.println("Entro al segundo ciclo");
             
-            JButton btn_insertar = new JButton("Registrar");
+            
+            JButton btn_insertar = new JButton("Ordeñar");
             
             // Agregar un ActionListener al botón "Editar"
             btn_insertar.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    System.out.println("Se registra el ordeño");
-                    //insertOrdenio(vacas_ordenio);
+                    showInsertOrdenio();
                 }
             });
 
@@ -81,6 +89,8 @@ public class PanelListarVacasOrdeniadores extends javax.swing.JPanel {
             filas[1] = vacas_ordenio.getEstado();
             filas[2] = btn_insertar;
             modelo.addRow(filas);
+            
+     
         }
         
         
@@ -105,7 +115,7 @@ public class PanelListarVacasOrdeniadores extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Vaca", "Estado", "Registrar"
+                "Vaca", "Estado", "Ordeñar"
             }
         ) {
             Class[] types = new Class [] {

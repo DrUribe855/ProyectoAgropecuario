@@ -1,6 +1,7 @@
 package PanelesViews;
 
 import Administrador.JFrameAdministrator;
+import Clases.Alerta;
 import Clases.Conexion;
 import java.util.HashMap;
 import java.util.Map;
@@ -11,15 +12,15 @@ public class JframeModificarVacas extends javax.swing.JFrame {
     Conexion conexion;
     JFrameAdministrator ventana;
     Integer id_vaca;
-    Integer id_finca;
+    String nombre_finca;
     String descripcion;
     String alias;
     String estado;
     
-    public JframeModificarVacas(JFrameAdministrator ventana, Integer id_vaca, Integer id_finca, String descripcion, String alias, String estado) {
+    public JframeModificarVacas(JFrameAdministrator ventana, Integer id_vaca, String nombre_finca, String descripcion, String alias, String estado) {
         this.ventana = ventana;
         this.id_vaca = id_vaca;
-        this.id_finca = id_finca;
+        this.nombre_finca = nombre_finca;
         this.descripcion = descripcion;
         this.alias = alias;
         this.estado = estado;
@@ -42,7 +43,7 @@ public class JframeModificarVacas extends javax.swing.JFrame {
     
     public void fillInputsCows(){
         this.campoIdVaca.setText(this.id_vaca.toString());
-        this.campoFincaAsignada.setText(this.id_finca.toString());
+        this.campoFincaAsignada.setText(this.nombre_finca);
         this.campoDescripcion.setText(this.descripcion);
         this.campoAlias.setText(this.alias);
         this.campoEstado.setSelectedItem(this.estado);
@@ -295,10 +296,10 @@ public class JframeModificarVacas extends javax.swing.JFrame {
             System.out.println("Usuario Modificado");
             this.ventana.showVacas();
             dispose();
-            //Alerta alert = new Alerta("Persona Creada","La persona fue creada correctamente","success");
+            Alerta alert = new Alerta("Vaca Modificada","La vaca fue modificar correctamente","success");
 
         }else{
-            //Alerta alert = new Alerta("Datos Inválidos", "Todos los campos son obligatorios.", "error");
+            Alerta alert = new Alerta("Datos Vacios", "Todos los campos son obligatorios.", "warning");
             //validarTodosInputs();
         }
     }//GEN-LAST:event_btnModificarActionPerformed

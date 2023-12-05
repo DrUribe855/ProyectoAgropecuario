@@ -22,19 +22,22 @@ public class JframeOrdeniador extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }
     
+    
+    
     public void showVacasOrdeniadores(){
         this.panelEstatico.removeAll();
         this.panelEstatico.repaint();
         
-        PanelListarVacasOrdeniadores ventanaPanelListarVacasOrdeniadores = new PanelListarVacasOrdeniadores(documento);
+        PanelListarVacasOrdeniadores ventanaPanelListarVacasOrdeniadores = new PanelListarVacasOrdeniadores(this, documento);
         ventanaPanelListarVacasOrdeniadores.setSize(this.panelEstatico.getSize());
         ventanaPanelListarVacasOrdeniadores.setLocation(0,0);
                 
         panelEstatico.add(ventanaPanelListarVacasOrdeniadores, BorderLayout.CENTER);
         panelEstatico.revalidate();
         panelEstatico.repaint();
-        
     }
+    
+    
     
     
     @SuppressWarnings("unchecked")

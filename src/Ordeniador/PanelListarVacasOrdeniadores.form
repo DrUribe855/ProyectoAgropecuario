@@ -76,7 +76,7 @@
                   <Table columnCount="3" rowCount="0">
                     <Column editable="false" title="Vaca" type="java.lang.Integer"/>
                     <Column editable="false" title="Estado" type="java.lang.String"/>
-                    <Column editable="true" title="Registrar" type="java.lang.Object"/>
+                    <Column editable="true" title="Orde&#xf1;ar" type="java.lang.Object"/>
                   </Table>
                 </Property>
               </Properties>
