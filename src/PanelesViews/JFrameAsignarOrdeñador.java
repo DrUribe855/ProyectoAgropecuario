@@ -1,5 +1,6 @@
 package PanelesViews;
 
+import Clases.Alerta;
 import Clases.Conexion;
 import Clases.Finca;
 import Clases.Usuario;
@@ -25,6 +26,13 @@ public class JFrameAsignarOrdeñador extends javax.swing.JFrame {
         initComponents();
         initAlternComponents();
         mostrarOrdeniadores();
+        initAlternStyles();
+    }
+    
+    public void initAlternStyles(){
+        selectOrdeniadores.putClientProperty( "JComponent.roundRect", true );
+        this.btnVolver.putClientProperty( "JButton.buttonType", "roundRect" );
+        this.btnRegistrar.putClientProperty( "JButton.buttonType", "roundRect" );
     }
     
     public void mostrarOrdeniadores(){
@@ -61,7 +69,7 @@ public class JFrameAsignarOrdeñador extends javax.swing.JFrame {
         inputIdFinca = new LIB.FSTexFieldMD();
         selectOrdeniadores = new javax.swing.JComboBox<>();
         btnVolver = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        btnRegistrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -84,7 +92,7 @@ public class JFrameAsignarOrdeñador extends javax.swing.JFrame {
 
         btnVolver.setBackground(new java.awt.Color(255, 51, 51));
         btnVolver.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
-        btnVolver.setForeground(new java.awt.Color(0, 0, 0));
+        btnVolver.setForeground(new java.awt.Color(255, 255, 255));
         btnVolver.setText("Volver");
         btnVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -92,13 +100,13 @@ public class JFrameAsignarOrdeñador extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setBackground(new java.awt.Color(0, 204, 0));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
-        jButton1.setText("Asignar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnRegistrar.setBackground(new java.awt.Color(0, 204, 0));
+        btnRegistrar.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        btnRegistrar.setForeground(new java.awt.Color(255, 255, 255));
+        btnRegistrar.setText("Asignar");
+        btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnRegistrarActionPerformed(evt);
             }
         });
 
@@ -115,7 +123,7 @@ public class JFrameAsignarOrdeñador extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 89, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(selectOrdeniadores, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 222, Short.MAX_VALUE))
+                    .addComponent(btnRegistrar, javax.swing.GroupLayout.DEFAULT_SIZE, 222, Short.MAX_VALUE))
                 .addGap(41, 41, 41))
         );
         jPanel1Layout.setVerticalGroup(
@@ -129,7 +137,7 @@ public class JFrameAsignarOrdeñador extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnVolver, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnRegistrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(42, 42, 42))
         );
 
@@ -155,7 +163,7 @@ public class JFrameAsignarOrdeñador extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_btnVolverActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
         String id = inputIdFinca.getText();
         String datosOrdeniador = (String) selectOrdeniadores.getSelectedItem();
         String [] datos = datosOrdeniador.split("-");
@@ -173,9 +181,17 @@ public class JFrameAsignarOrdeñador extends javax.swing.JFrame {
                 System.out.println("json object " + persona);
                 String idUsuario = persona.get("id_usuario").getAsString();
                 System.out.println(idUsuario);
+                
+                if(!idUsuario.equals("") && !id.equals("")){
+                    Map<String, String> insertData = new HashMap<>();
+                    insertData.put("id_usuario", idUsuario);
+                    insertData.put("id_finca", id);
+                    System.out.println("Consumo INSERT: " + conexion.consumoPOST("http://localhost/APIenPHPVacas/insertOrdeniadoresFinca.php", insertData));
+                    Alerta alert = new Alerta("Usuario asignado","El usuario fue asignado correctamente","success");
+                }
             }
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnRegistrarActionPerformed
 
     
     public static void main(String args[]) {
@@ -207,9 +223,9 @@ public class JFrameAsignarOrdeñador extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnRegistrar;
     private javax.swing.JButton btnVolver;
     private LIB.FSTexFieldMD inputIdFinca;
-    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JLabel labelAsignacionUsuario;

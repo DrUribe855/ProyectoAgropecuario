@@ -1,6 +1,4 @@
 
-
-
 package Login;
  
 import Administrador.JFrameAdministrator;
@@ -38,6 +36,7 @@ public class Login extends javax.swing.JFrame {
         char[] password = this.inputPassword.getPassword();
         String passwordString = new String(password);
         
+        
         if(!document.equals("") && !password.equals("")){
             
             Map<String, String> getData = new HashMap<>();
@@ -60,7 +59,7 @@ public class Login extends javax.swing.JFrame {
                         this.dispose();
                     }else{
                         System.out.println("Ingresó un ordeñador");
-                        JframeOrdeniador ventana = new JframeOrdeniador(nombres);
+                        JframeOrdeniador ventana = new JframeOrdeniador(nombres, documento);
                         ventana.setVisible(true);
                         this.dispose();
                     }
@@ -215,13 +214,7 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel4MouseClicked
 
     private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
-        this.validateUser(); 
-        //System.out.println(conexion.consumoGET("http://localhost/APIenPHP/Obtener.php"));
-        
-        
-        
-        
-        
+        this.validateUser();   
     }//GEN-LAST:event_btnIngresarActionPerformed
 
 
