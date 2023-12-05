@@ -1,5 +1,7 @@
  package Ordeniador;
 
+import Login.Login;
+import PanelesViews.PanelBienvenida;
 import com.formdev.flatlaf.FlatLightLaf;
 import java.awt.BorderLayout;
 import javax.swing.UIManager;
@@ -7,6 +9,8 @@ import javax.swing.UIManager;
 
 public class JframeOrdeniador extends javax.swing.JFrame {
     
+    PanelBienvenida panelBienvenida;
+    Login login;
     String nombre;
     String documento;
     //String id;
@@ -16,10 +20,22 @@ public class JframeOrdeniador extends javax.swing.JFrame {
         //this.id = id;
         initComponents();
         initAlternComponents();
+        setLocationRelativeTo(null);
+    }
+    
+    public JframeOrdeniador() {
+        initComponents();
+        initAlternComponents();
+        setLocationRelativeTo(null);
+        
     }
     
     public void initAlternComponents(){
         setLocationRelativeTo(null);
+        this.labelNombre.setText("¡Bienvenido " + this.nombre + "!");
+        this.panelBienvenida = new PanelBienvenida();
+        panelBienvenida.setSize(this.panelEstatico.getSize());
+        panelEstatico.add(panelBienvenida);
     }
     
     
@@ -48,6 +64,8 @@ public class JframeOrdeniador extends javax.swing.JFrame {
         menu = new javax.swing.JPanel();
         btn_listadoVacas = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        labelNombre = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
         panelEstatico = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -86,21 +104,38 @@ public class JframeOrdeniador extends javax.swing.JFrame {
             }
         });
 
+        labelNombre.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        labelNombre.setForeground(new java.awt.Color(255, 255, 255));
+        labelNombre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        jSeparator1.setForeground(new java.awt.Color(255, 255, 255));
+
         javax.swing.GroupLayout menuLayout = new javax.swing.GroupLayout(menu);
         menu.setLayout(menuLayout);
         menuLayout.setHorizontalGroup(
             menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(btn_listadoVacas, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(menuLayout.createSequentialGroup()
+                .addGroup(menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btn_listadoVacas, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jSeparator1)
+                .addContainerGap())
         );
         menuLayout.setVerticalGroup(
             menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(menuLayout.createSequentialGroup()
-                .addGap(101, 101, 101)
+                .addGap(17, 17, 17)
+                .addComponent(labelNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50)
                 .addComponent(btn_listadoVacas, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 300, Short.MAX_VALUE)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(271, 271, 271)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         panelEstatico.setBackground(new java.awt.Color(255, 255, 255));
@@ -146,7 +181,9 @@ public class JframeOrdeniador extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        dispose();
+        Login login = new Login();
+        login.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void btn_listadoVacasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_listadoVacasActionPerformed
@@ -167,6 +204,8 @@ public class JframeOrdeniador extends javax.swing.JFrame {
     private javax.swing.JPanel background;
     private javax.swing.JButton btn_listadoVacas;
     private javax.swing.JButton jButton2;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JLabel labelNombre;
     private javax.swing.JPanel menu;
     private javax.swing.JPanel panelEstatico;
     // End of variables declaration//GEN-END:variables

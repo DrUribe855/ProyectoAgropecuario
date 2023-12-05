@@ -40,8 +40,8 @@ public class PanelListarFincas extends javax.swing.JPanel {
         this.TableFincas.getColumn("Modificar").setCellRenderer(new ButtonRenderer());
         this.TableFincas.getColumn("Modificar").setCellEditor(new ButtonEditor(new JCheckBox()));
 
-        this.TableFincas.getColumn("Eliminar").setCellRenderer(new ButtonRenderer());
-        this.TableFincas.getColumn("Eliminar").setCellEditor(new ButtonEditor(new JCheckBox()));
+        this.TableFincas.getColumn("Asignar").setCellRenderer(new ButtonRenderer());
+        this.TableFincas.getColumn("Asignar").setCellEditor(new ButtonEditor(new JCheckBox()));
     }
     
     public void initAlternStyles(){
@@ -68,7 +68,7 @@ public class PanelListarFincas extends javax.swing.JPanel {
         for (Finca finca : fincas) {
             
             JButton btn_editar = new JButton("Modificar");
-            JButton btn_eliminar = new JButton("Eliminar");
+            JButton btn_eliminar = new JButton("Asignar");
             
             // Agregar un ActionListener al botón "Editar"
             btn_editar.addActionListener(new ActionListener() {
@@ -83,8 +83,8 @@ public class PanelListarFincas extends javax.swing.JPanel {
             btn_eliminar.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    deleteFinca(finca);
-                    System.out.println("Eliminar");
+                    asignarFinca(finca);
+                    System.out.println("Asignar");
                 }
             });
             
@@ -109,8 +109,10 @@ public class PanelListarFincas extends javax.swing.JPanel {
         ventanaUpdate.setVisible(true);
     }
     
-    public void deleteFinca(Finca finca){
-        System.out.println("Nombre: "+finca.getNombre_finca());
+    public void asignarFinca(Finca finca){
+        int id_finca = finca.getId_finca();
+        JFrameAsignarOrdeñador ventanaAsignacion = new JFrameAsignarOrdeñador(id_finca);
+        ventanaAsignacion.setVisible(true);
     }
     
     @SuppressWarnings("unchecked")
@@ -133,7 +135,7 @@ public class PanelListarFincas extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Identificador Finca", "Nombre Finca", "Modificar", "Eliminar"
+                "Identificador Finca", "Nombre Finca", "Modificar", "Asignar"
             }
         ) {
             Class[] types = new Class [] {
