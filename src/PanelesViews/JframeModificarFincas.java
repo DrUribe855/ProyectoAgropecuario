@@ -6,6 +6,7 @@ import Clases.Conexion;
 import com.formdev.flatlaf.FlatLightLaf;
 import java.util.HashMap;
 import java.util.Map;
+import javax.swing.ImageIcon;
 import javax.swing.UIManager;
 
 public class JframeModificarFincas extends javax.swing.JFrame {
@@ -27,6 +28,8 @@ public class JframeModificarFincas extends javax.swing.JFrame {
     }
     public void initAlternComponents(){
         setLocationRelativeTo(null);
+        setIconImage(new ImageIcon(getClass().getResource("/Img/logo.jpeg")).getImage());
+    
     }
     
     public void initAlternStyles(){

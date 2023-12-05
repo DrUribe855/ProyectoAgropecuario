@@ -253,7 +253,7 @@
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="4">
                         <StringItem index="0" value="Ordeniada"/>
-                        <StringItem index="1" value="Sin ordeniar"/>
+                        <StringItem index="1" value="Sin ordenar"/>
                         <StringItem index="2" value=" "/>
                         <StringItem index="3" value=" "/>
                       </StringArray>

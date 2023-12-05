@@ -5,6 +5,7 @@ import Clases.Alerta;
 import Clases.Conexion;
 import java.util.HashMap;
 import java.util.Map;
+import javax.swing.ImageIcon;
 
 
 public class JframeModificarVacas extends javax.swing.JFrame {
@@ -33,6 +34,8 @@ public class JframeModificarVacas extends javax.swing.JFrame {
     
     public void initAlternComponents(){
         setLocationRelativeTo(null);
+        setIconImage(new ImageIcon(getClass().getResource("/Img/logo.jpeg")).getImage());
+    
     }
     
     public void initAlternStyles(){

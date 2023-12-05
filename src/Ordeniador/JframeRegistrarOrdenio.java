@@ -4,19 +4,62 @@ package Ordeniador;
 import Administrador.JFrameAdministrator;
 import Clases.Alerta;
 import Clases.Conexion;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.TimeZone;
+import javax.swing.ImageIcon;
 
 public class JframeRegistrarOrdenio extends javax.swing.JFrame {
 
     Conexion conexion;
     JframeOrdeniador ventana;
-    public JframeRegistrarOrdenio(JframeOrdeniador ventana) {
+    String id_ordeniador;
+    String id_vaca;
+    String estado;
+    
+    public JframeRegistrarOrdenio(JframeOrdeniador ventana, String id_usuario, String id_vaca, String estado) {
         this.conexion = new Conexion();
         this.ventana = ventana;
+        this.id_ordeniador = id_usuario;
+        this.id_vaca = id_vaca;
+        this.estado = estado;
+        initAlternComponents();
         initComponents();
+        fillInputs();
     }
+    
+   
+    public void initAlternComponents(){
+        setLocationRelativeTo(null);
+        setIconImage(new ImageIcon(getClass().getResource("/Img/logo.jpeg")).getImage());
+    }
+    public void fillInputs(){
+        campoIdVaca.setText(id_vaca);
+        campoIdVaca.setEnabled(false);
+        
+        campoOrdeniador.setText(id_ordeniador);
+        campoOrdeniador.setEnabled(false);
+        System.out.println(estado);
+        
+        // Obtener la fecha y hora actual
+        Date fechaHoraActual = new Date();
+        
+        // Crear un formato para la zona horaria de Colombia y el formato de 12 horas
+        SimpleDateFormat formatoColombia = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss a");
+        formatoColombia.setTimeZone(TimeZone.getTimeZone("America/Bogota"));
 
+        // Formatear la fecha y hora actual según la zona horaria de Colombia y el formato de 12 horas
+        String fechaHoraFormateada = formatoColombia.format(fechaHoraActual);
+
+        // Asignar la fecha y hora formateada al JTextField
+        campoFecha.setText(fechaHoraFormateada);
+
+        // Deshabilitar el JTextField
+        campoFecha.setEnabled(false);
+        
+    }
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -187,12 +230,21 @@ public class JframeRegistrarOrdenio extends javax.swing.JFrame {
         String fecha = campoFecha.getText();
 
         if (!id_vaca.equals("") && !ordeniador.equals("") && !litros.equals("") && !fecha.equals("") ) {
+            
+            //Primero se hace el registro de produccion de la vaca
             Map<String, String> insertData = new HashMap<>();
             insertData.put("id_vaca", id_vaca);
             insertData.put("id_ordeniador", ordeniador);
             insertData.put("litros", litros);
             insertData.put("fecha", fecha);
             System.out.println("Consumo INSERT: " + conexion.consumoPOST("http://localhost/APIenPHPVacas/insertProcesoOrdenio.php", insertData));
+            
+            //Segundo, el estado de la vaca pasa a ordeñada
+            Map<String, String> updateData = new HashMap<>();
+            updateData.put("id_vaca", id_vaca);
+            updateData.put("estado", estado);
+            System.out.println("Consumo UPDATE: " + conexion.consumoPOST("http://localhost/APIenPHPVacas/UpdateEstadoVaca.php", updateData));
+            
 
             System.out.println("Ordeño registrado");
             // hace que recargue el panel de listar

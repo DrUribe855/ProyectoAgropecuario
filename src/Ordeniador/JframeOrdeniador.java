@@ -4,6 +4,7 @@ import Login.Login;
 import PanelesViews.PanelBienvenida;
 import com.formdev.flatlaf.FlatLightLaf;
 import java.awt.BorderLayout;
+import javax.swing.ImageIcon;
 import javax.swing.UIManager;
 
 
@@ -32,6 +33,7 @@ public class JframeOrdeniador extends javax.swing.JFrame {
     
     public void initAlternComponents(){
         setLocationRelativeTo(null);
+        setIconImage(new ImageIcon(getClass().getResource("/Img/logo.jpeg")).getImage());
         this.labelNombre.setText("¡Bienvenido " + this.nombre + "!");
         this.panelBienvenida = new PanelBienvenida();
         panelBienvenida.setSize(this.panelEstatico.getSize());

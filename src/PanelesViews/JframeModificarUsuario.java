@@ -5,6 +5,7 @@ import Clases.Conexion;
 import Clases.Usuario;
 import java.util.HashMap;
 import java.util.Map;
+import javax.swing.ImageIcon;
 
 public class JframeModificarUsuario extends javax.swing.JFrame {
     
@@ -34,6 +35,8 @@ public class JframeModificarUsuario extends javax.swing.JFrame {
     
     public void initAlternComponents(){
         setLocationRelativeTo(null);
+        setLocationRelativeTo(null);
+        setIconImage(new ImageIcon(getClass().getResource("/Img/logo.jpeg")).getImage());
     }
     
     public void initAlternStyles(){

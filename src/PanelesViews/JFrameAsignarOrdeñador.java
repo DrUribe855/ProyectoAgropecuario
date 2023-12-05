@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.swing.ImageIcon;
 
 public class JFrameAsignarOrdeñador extends javax.swing.JFrame {
 
@@ -55,6 +56,8 @@ public class JFrameAsignarOrdeñador extends javax.swing.JFrame {
     public void initAlternComponents(){
         setLocationRelativeTo(null);
         this.inputIdFinca.setText(Integer.toString(this.id_finca));
+        setLocationRelativeTo(null);
+        setIconImage(new ImageIcon(getClass().getResource("/Img/logo.jpeg")).getImage());
     }
     
     

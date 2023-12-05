@@ -5,6 +5,7 @@ import Clases.ButtonEditor;
 import Clases.ButtonRenderer;
 import Clases.Conexion;
 import Clases.VacasConOrdeniador;
+import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -25,6 +26,9 @@ public class PanelListarVacasOrdeniadores extends javax.swing.JPanel {
     JframeOrdeniador ventanaOrdeniador;
     Conexion conexion;
     String documento;
+    String id_vaca;
+    String estado;
+    Gson gson = new Gson();
     
     public PanelListarVacasOrdeniadores(JframeOrdeniador ventanaOrdeniador, String documento) {
         this.conexion = new Conexion();
@@ -41,15 +45,13 @@ public class PanelListarVacasOrdeniadores extends javax.swing.JPanel {
         this.Table.getColumn("Ordeñar").setCellEditor(new ButtonEditor(new JCheckBox()));
     }
     
-    public void showInsertOrdenio(){
-        JframeRegistrarOrdenio ventana = new JframeRegistrarOrdenio(ventanaOrdeniador);
-        ventana.setVisible(true);
-        
+    public void showInsertOrdenio(){  
     }
     
     public void fillData(){
         Map<String, String> mapData = new HashMap<>();
         mapData.put("documento", documento);
+        
         String textoJson = conexion.consumoGET("http://localhost/APIenPHPVacas/JoinFincaVacasUsuarios.php", mapData);
         System.out.println(textoJson);
         
@@ -60,8 +62,9 @@ public class PanelListarVacasOrdeniadores extends javax.swing.JPanel {
         for (JsonElement elemento : registros) {
             
             JsonObject registro = elemento.getAsJsonObject();
+            this.id_vaca = registro.get("id_vaca").getAsString();
             String alias = registro.get("alias").getAsString();
-            String estado = registro.get("estado").getAsString();
+            this.estado = registro.get("estado").getAsString();
          
             VacasConOrdeniador vacas_ordenio = new VacasConOrdeniador(alias, estado);
             
@@ -80,7 +83,23 @@ public class PanelListarVacasOrdeniadores extends javax.swing.JPanel {
             btn_insertar.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    showInsertOrdenio();
+                    
+                    
+                    Map<String, String> data = new HashMap<>();
+                    data.put("documento", documento);
+                    String textoJson = conexion.consumoGET("http://localhost/APIenPHPVacas/getUsuario.php", mapData);
+                    System.out.println(textoJson);
+                    
+                    
+                    JsonObject usuario = gson.fromJson(textoJson, JsonObject.class);
+                    String id_usuario = usuario.get("id_usuario").getAsString();
+                    System.out.println(estado);
+                   
+                    
+                    
+                    
+                    JframeRegistrarOrdenio ventana = new JframeRegistrarOrdenio(ventanaOrdeniador, id_usuario, id_vaca, estado);
+                    ventana.setVisible(true);
                 }
             });
 

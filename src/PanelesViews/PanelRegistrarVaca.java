@@ -1,6 +1,7 @@
 package PanelesViews;
 
 import Administrador.JFrameAdministrator;
+import Clases.Alerta;
 import Clases.Conexion;
 import java.util.HashMap;
 import java.util.Map;
@@ -78,7 +79,7 @@ public class PanelRegistrarVaca extends javax.swing.JPanel {
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("Descripcion");
 
-        campoEstado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ordeniada", "Sin ordeniar", " ", " " }));
+        campoEstado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ordeniada", "Sin ordenar", " ", " " }));
 
         btnVolver.setBackground(new java.awt.Color(255, 51, 51));
         btnVolver.setFont(new java.awt.Font("HP Simplified Hans", 1, 18)); // NOI18N
@@ -248,9 +249,10 @@ public class PanelRegistrarVaca extends javax.swing.JPanel {
             JFrameAdministrator ventana2 = new JFrameAdministrator();
             setVisible(false);
             ventana.showVacas(); 
+            Alerta alert = new Alerta("Vaca Creada","La vaca fue creada correctamente","success");
         }else{
             System.out.println("Algun dato está vacio");
-            
+            Alerta alert = new Alerta("Datos Vacios", "Todos los campos son obligatorios.", "warning");
         }
     }//GEN-LAST:event_btnRegistrarActionPerformed
 

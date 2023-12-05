@@ -6,7 +6,7 @@
     include 'Conexion.php';
 
     if (!empty($_GET['documento'])) {
-	    $consulta = $base_de_datos->query("SELECT vacas.alias, vacas.estado
+	    $consulta = $base_de_datos->query("SELECT vacas.id_vaca, vacas.alias, vacas.estado
                                             FROM vacas
                                             JOIN fincas ON vacas.id_finca = fincas.id_finca
                                             JOIN ordeniadores_finca ON fincas.id_finca = ordeniadores_finca.id_finca

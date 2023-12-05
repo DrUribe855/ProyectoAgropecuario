@@ -6,6 +6,7 @@ import Clases.Alerta;
 import Clases.Conexion;
 import java.util.HashMap;
 import java.util.Map;
+import javax.swing.ImageIcon;
 
 public class JframeRegistrarFinca extends javax.swing.JFrame {
 
@@ -21,6 +22,8 @@ public class JframeRegistrarFinca extends javax.swing.JFrame {
 
     public void initAlternComponents(){
         setLocationRelativeTo(null);
+        setIconImage(new ImageIcon(getClass().getResource("/Img/logo.jpeg")).getImage());
+    
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
