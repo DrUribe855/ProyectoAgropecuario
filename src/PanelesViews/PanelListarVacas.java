@@ -52,11 +52,11 @@ public class PanelListarVacas extends javax.swing.JPanel {
         for(JsonElement elemento : registros){
             JsonObject registro = elemento.getAsJsonObject();
             Integer id_vaca = registro.get("id_vaca").getAsInt();
-            String nombre_finca = registro.get("nombre_finca").getAsString();
+            String id_finca = registro.get("id_finca").getAsString();
             String alias = registro.get("alias").getAsString();
             String descripcion = registro.get("descripcion").getAsString();
             String estado = registro.get("estado").getAsString();
-            Vaca vaca = new Vaca(id_vaca, nombre_finca, alias, descripcion, estado);
+            Vaca vaca = new Vaca(id_vaca, id_finca, alias, descripcion, estado);
             vacas.add(vaca);
         }
         
@@ -74,7 +74,7 @@ public class PanelListarVacas extends javax.swing.JPanel {
              
             Object[] filas = new Object[6];
             filas[0] = vaca.getId_vaca();
-            filas[1] = vaca.getNombre_finca();
+            filas[1] = vaca.getId_finca();
             filas[2] = vaca.getAlias();
             filas[3] = vaca.getDescripcion();
             filas[4] = vaca.getEstado();
@@ -86,12 +86,12 @@ public class PanelListarVacas extends javax.swing.JPanel {
     
     public void updateVaca(Vaca vaca){
         Integer id_vaca = vaca.getId_vaca();
-        String nombre_finca = vaca.getNombre_finca();
+        String id_finca = vaca.getId_finca();
         String alias = vaca.getAlias();
         String descripcion = vaca.getDescripcion();
         String estado = vaca.getEstado();
         
-        JframeModificarVacas ventanaUpdate = new JframeModificarVacas(this.ventanaAdministrador, id_vaca, nombre_finca, descripcion, alias, estado);
+        JframeModificarVacas ventanaUpdate = new JframeModificarVacas(this.ventanaAdministrador, id_vaca, id_finca, descripcion, alias, estado);
         ventanaUpdate.setVisible(true);
     }
     @SuppressWarnings("unchecked")

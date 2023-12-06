@@ -63,7 +63,6 @@ public class JframeRegistrarFinca extends javax.swing.JFrame {
         campoNameFinca.setForeground(new java.awt.Color(0, 0, 0));
         campoNameFinca.setText(" ");
         campoNameFinca.setBordeColorFocus(new java.awt.Color(0, 0, 0));
-        campoNameFinca.setFocusable(false);
         campoNameFinca.setPlaceholder(" ");
 
         btnVolver.setBackground(new java.awt.Color(255, 51, 51));

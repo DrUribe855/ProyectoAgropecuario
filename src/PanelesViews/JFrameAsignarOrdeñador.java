@@ -75,6 +75,8 @@ public class JFrameAsignarOrdeñador extends javax.swing.JFrame {
         btnRegistrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -82,7 +84,7 @@ public class JFrameAsignarOrdeñador extends javax.swing.JFrame {
         labelAsignacionUsuario.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
         labelAsignacionUsuario.setForeground(new java.awt.Color(255, 255, 255));
         labelAsignacionUsuario.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelAsignacionUsuario.setText("Asignación de ordeñador");
+        labelAsignacionUsuario.setText("Asignación de personal");
         labelAsignacionUsuario.setOpaque(true);
 
         inputIdFinca.setBackground(new java.awt.Color(255, 255, 255));

@@ -97,7 +97,6 @@ public class JframeModificarFincas extends javax.swing.JFrame {
         campoNombreFinca.setForeground(new java.awt.Color(0, 0, 0));
         campoNombreFinca.setText(" ");
         campoNombreFinca.setBordeColorFocus(new java.awt.Color(0, 0, 0));
-        campoNombreFinca.setFocusable(false);
         campoNombreFinca.setPlaceholder(" ");
 
         jButton2.setBackground(new java.awt.Color(255, 51, 51));

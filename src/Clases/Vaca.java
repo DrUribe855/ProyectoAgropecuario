@@ -3,26 +3,26 @@
 public class Vaca {
     
     int id_vaca;
-    String nombre_finca;
+    String id_finca;
     String alias;
     String descripcion;
     String estado;
 
    
-    public Vaca(int id_vaca, String nombre_finca, String alias, String descripcion, String estado) {
+    public Vaca(int id_vaca, String id_finca, String alias, String descripcion, String estado) {
         this.id_vaca = id_vaca;
-        this.nombre_finca = nombre_finca;
+        this.id_finca = id_finca;
         this.alias = alias;
         this.descripcion = descripcion;
         this.estado = estado;
     }
 
-    public String getNombre_finca() {
-        return nombre_finca;
+    public String getId_finca() {
+        return id_finca;
     }
 
-    public void setNombre_finca(String nombre_finca) {
-        this.nombre_finca = nombre_finca;
+    public void setId_finca(String id_finca) {
+        this.id_finca = id_finca;
     }
 
     public int getId_vaca() {
