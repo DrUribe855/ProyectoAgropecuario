@@ -25,8 +25,9 @@ public class JframeRegistrarOrdenio extends javax.swing.JFrame {
         this.id_ordeniador = id_usuario;
         this.id_vaca = id_vaca;
         this.estado = estado;
-        initAlternComponents();
+        
         initComponents();
+        initAlternComponents();
         fillInputs();
     }
     
@@ -110,6 +111,11 @@ public class JframeRegistrarOrdenio extends javax.swing.JFrame {
         buttonVolver.setFont(new java.awt.Font("HP Simplified Hans", 3, 18)); // NOI18N
         buttonVolver.setForeground(new java.awt.Color(255, 255, 255));
         buttonVolver.setText("Volver");
+        buttonVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonVolverActionPerformed(evt);
+            }
+        });
 
         buttonRegistrar.setBackground(new java.awt.Color(0, 153, 0));
         buttonRegistrar.setFont(new java.awt.Font("HP Simplified Hans", 3, 18)); // NOI18N
@@ -256,6 +262,10 @@ public class JframeRegistrarOrdenio extends javax.swing.JFrame {
             Alerta alert = new Alerta("Datos Vacios", "Todos los campos son obligatorios.", "warning");
         }
     }//GEN-LAST:event_buttonRegistrarActionPerformed
+
+    private void buttonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonVolverActionPerformed
+        dispose();
+    }//GEN-LAST:event_buttonVolverActionPerformed
 
     
 

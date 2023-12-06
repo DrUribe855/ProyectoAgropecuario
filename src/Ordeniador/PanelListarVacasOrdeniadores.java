@@ -45,8 +45,6 @@ public class PanelListarVacasOrdeniadores extends javax.swing.JPanel {
         this.Table.getColumn("Ordeñar").setCellEditor(new ButtonEditor(new JCheckBox()));
     }
     
-    public void showInsertOrdenio(){  
-    }
     
     public void fillData(){
         Map<String, String> mapData = new HashMap<>();
@@ -63,9 +61,11 @@ public class PanelListarVacasOrdeniadores extends javax.swing.JPanel {
             
             JsonObject registro = elemento.getAsJsonObject();
             this.id_vaca = registro.get("id_vaca").getAsString();
+            System.out.print(id_vaca);
             String alias = registro.get("alias").getAsString();
+            System.out.print(alias);
             this.estado = registro.get("estado").getAsString();
-         
+            System.out.println(estado);
             VacasConOrdeniador vacas_ordenio = new VacasConOrdeniador(alias, estado);
             
             vacas_ordeniadores.add(vacas_ordenio);
@@ -93,10 +93,9 @@ public class PanelListarVacasOrdeniadores extends javax.swing.JPanel {
                     
                     JsonObject usuario = gson.fromJson(textoJson, JsonObject.class);
                     String id_usuario = usuario.get("id_usuario").getAsString();
+                    
                     System.out.println(estado);
-                   
-                    
-                    
+                    System.out.println(id_vaca);
                     
                     JframeRegistrarOrdenio ventana = new JframeRegistrarOrdenio(ventanaOrdeniador, id_usuario, id_vaca, estado);
                     ventana.setVisible(true);
